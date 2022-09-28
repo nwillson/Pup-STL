@@ -13,7 +13,6 @@ export default links => html`
     </ul>
     <div class="options">
       <div id="where"><h1>Where Would You Like To Go?</h1></div>
-
       <div class="publicParks">
         <h2><center>Public Parks</center></h2>
       </div>

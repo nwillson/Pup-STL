@@ -18,6 +18,8 @@
     "prettier": "1.19.1"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
     "html-literal": "^1.1.0",
     "lodash": "^4.17.21",
     "navigo": "^8.11.1",

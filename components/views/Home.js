@@ -1,8 +1,6 @@
 import html from "html-literal";
 
 export default state => html`
-  <section id="jumbotron">
-    <a href="index.html">"Call to Action" "Button"</a>
 
     <div class="stockPhotos">
       <div id="one"><img src="https://i.ibb.co/HC6QGjB/St-Louis-6.jpg" /></div>
