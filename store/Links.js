@@ -1,6 +1,7 @@
 export default [
   { title: "Home", text: "Home" },
-  { title: "Coffee", text: "Coffee" },
-  { title: "Gated Dog Parks", text: "Gated Dog Parks" },
-  { title: "Public Parks", text: "Public Parks" }
+  { title: "Publicparks", text: "Public Parks" },
+  { title: "Gateddogparks", text: "Gated Dog Parks" },
+  { title: "Restaurantsbars", text: "Restaurants and Bars" },
+  { title: "Coffee", text: "Coffee" }
 ];

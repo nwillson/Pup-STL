@@ -8,6 +8,5 @@ export default () => html`
         Ranked by Average Review Rating, Safety, and Location
       </h3>
     </div>
-    <div class="topPicks"><h1>Our Top Picks</h1></div>
   </footer>
 `;

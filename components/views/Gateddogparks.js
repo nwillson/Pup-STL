@@ -1,9 +1,10 @@
 import html from "html-literal";
 
-export default () => html`
-  <section id="Restaurantsbars">
-    <h1>Placeholder Information For Restaurants and Bars</h1>
+export default state => html`
+  <section id="Gateddogparks">
+    <h1>Placeholder Information for Gated Dog Parks</h1>
     <h1>Put this header below Crime Section</h1>
     <h1>Put this header below "Our Top Picks"</h1>
+    ;
   </section>
 `;
