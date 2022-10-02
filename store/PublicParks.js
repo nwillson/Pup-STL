@@ -1,4 +1,4 @@
 export default {
-  header: "Public Parks",
+  header: "Public parks",
   view: "Publicparks"
 };
