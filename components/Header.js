@@ -16,5 +16,6 @@ export default () => html`
       <h1>A St. Louis Dog Owner Hub</h1>
       </div>
 
+
   </header>
 `;

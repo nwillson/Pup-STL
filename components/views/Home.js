@@ -1,7 +1,7 @@
 import html from "html-literal";
 
 export default state => html`
-
+<!--
     <div class="stockPhotos">
       <div id="one"><img src="https://i.ibb.co/HC6QGjB/St-Louis-6.jpg" /></div>
 
@@ -17,6 +17,7 @@ export default state => html`
 
       <div id="six"><img src="https://i.ibb.co/P4nKrwX/St-Louis-8.jpg" /></div>
     </div>
+-->
     <div class="options">
       <div id="where"><h1>Where Would You Like To Go?</h1></div>
       <div class="publicParks">
@@ -34,6 +35,7 @@ export default state => html`
         <button><h2>Coffee</h2></button>
       </div>
     </div>
+
   </section>
   <div class="crimeMap">
     <h1>More Resources on Crime Here:</h1>
