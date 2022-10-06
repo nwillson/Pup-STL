@@ -2,6 +2,20 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
+@media (max-width: 699px) {
+    .title {
+      width: 100%;
+    }
+
+    .logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+}
+
 .appName {
   font-family: cinzel;
 }
@@ -44,8 +58,8 @@ flex-direction: row;
 }
 
 .stockPhotos  img {
-  height: 250px;
-  width: 394px;
+  width: 100%;
+  height: 100%;
 }
 
 .title {
@@ -217,4 +231,96 @@ button {
 
 .crimeMap {
   text-align: center;
+}
+
+.forestPark {
+  margin-top: 2%;
+  width: 19%;
+}
+
+.towerGrove {
+  width: 19%;
+}
+
+.francisPark {
+  width: 19%;
+
+}
+
+.topPicksInfo {
+  text-align: center;
+}
+
+.facts {
+  margin-top: 100px;
+  border: 4px solid gray;
+  border-radius: 10%;
+  width: 400px;
+  height: 200px;
+  background-position: center;
+  background-color: #ffe3be;
+  margin: 0 auto;
+  margin-top: 50px;
+  list-style-type: none;
+}
+
+.forestParkHeader {
+    font-family: cinzel;
+    display: block;
+    text-align: center;
+      height: 50px;
+      width: 190px;
+      line-height: 50px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+      background-color: #d72323;
+      background-position: center;
+      color: white;
+      margin: 0 auto;
+      margin-top: 45px;
+}
+
+.towerGroveHeader {
+  font-family: cinzel;
+  display: block;
+  text-align: center;
+    height: 50px;
+    width: 190px;
+    line-height: 50px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #d72323;
+    background-position: center;
+    color: white;
+    margin: 0 auto;
+    margin-top: 45px;
+}
+
+.francisParkHeader {
+  font-family: cinzel;
+  display: block;
+  text-align: center;
+    height: 50px;
+    width: 190px;
+    line-height: 50px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #d72323;
+    background-position: center;
+    color: white;
+    margin: 0 auto;
+    margin-top: 45px;
+}
+
+.francisParkBody {
+  text-align: center;
+}
+.weatherLogo {
+  display: block;
+  height: 10px;
+}
+
+.allWeather {
+  display: flex;
+  flex-direction: row;
 }
