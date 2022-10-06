@@ -9,7 +9,7 @@ const router = new Navigo("/");
 
 function render(state = store.Home) {
   document.querySelector("#root").innerHTML = `
-      ${Header(state)}
+      ${Header(store.Header)}
       ${Nav(store.Links)}
       ${Main(state)}
       ${Footer()}
@@ -67,35 +67,35 @@ router.hooks({
         ? capitalize(params.data.view)
         : "Home";
 
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
+      )
+      .then(response => {
+        const kelvinToFahrenheit = kelvinTemp =>
+          Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+
+        store.Header.weather = {};
+        store.Header.weather.city = response.data.name;
+        store.Header.weather.temp = kelvinToFahrenheit(response.data.main.temp);
+        store.Header.weather.feelsLike = kelvinToFahrenheit(
+          response.data.main.feels_like
+        );
+        store.Header.weather.description = response.data.weather[0].main;
+
+        console.log(response.data);
+        done();
+      })
+      .catch(err => console.log(err));
+
     // Add a switch case statement to handle multiple routes
-    switch (view) {
+    /*switch (view) {
       case "Home":
-        axios
-          .get(
-            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
-          )
-          .then(response => {
-            const kelvinToFahrenheit = kelvinTemp =>
-              Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
-
-            store.Home.weather = {};
-            store.Home.weather.city = response.data.name;
-            store.Home.weather.temp = kelvinToFahrenheit(
-              response.data.main.temp
-            );
-            store.Home.weather.feelsLike = kelvinToFahrenheit(
-              response.data.main.feels_like
-            );
-            store.Home.weather.description = response.data.weather[0].main;
-
-            console.log(response.data);
-            done();
-          })
-          .catch(err => console.log(err));
         break;
       default:
         done();
     }
+    */
   }
 });
 
