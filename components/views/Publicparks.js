@@ -25,13 +25,14 @@ export default () => html`
 
 
 <div class = "towerGroveHeader"><h1>Tower Grove Park</h1></div>
-<img class="towerGrove" src="https://i.ibb.co/n8D4y9V/Tower-Grove-1.jpg" />
+<div class = "towerGrovePics"><img class="towerGrove" src="https://i.ibb.co/n8D4y9V/Tower-Grove-1.jpg" />
 <img class="towerGrove" src="https://i.ibb.co/Btg7KjG/Tower-Grove-2.jpg" />
 <img class="towerGrove" src="https://i.ibb.co/dk5Z0Pg/Tower-Grove-3.jpg" />
 <img class="towerGrove" src="https://i.ibb.co/5BrqFH0/Tower-Grove-4.jpg" />
-<img class="towerGrove" src="https://i.ibb.co/VtdZTyz/Tower-Grove-5.jpg" />
+<img class="towerGrove" src="https://i.ibb.co/VtdZTyz/Tower-Grove-5.jpg" /></div>
 
-<div class = "towerGroveBody"><h1>More Information on Tower Grove</h1></div>
+
+<div class = "facts"><h1>More Information on Tower Grove</h1></div>
 
 <div class = "francisParkHeader"><h1>Francis Park</h1></div>
 <img class="francisPark" src="https://i.ibb.co/gJq6L2J/Francis-Park-1.jpg" />
@@ -39,7 +40,7 @@ export default () => html`
 <img class="francisPark" src="https://i.ibb.co/C0wV6sr/Francis-Park-3.jpg" />
 </section></div>
 
-<div class = "francisParkBody"><h1>More Information on Francis Park</h1></div>
+<div class = "facts"><center><h2>More Information on Francis Park</h2></center></div>
 
 `;
 
