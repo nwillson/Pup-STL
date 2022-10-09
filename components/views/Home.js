@@ -37,6 +37,7 @@ export default state => html`
       </div>
     </div>
 
+
   </section>
   <div class="crimeMap">
     <h1>More Resources on Crime Here:</h1>

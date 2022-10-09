@@ -23,7 +23,7 @@ function render(state = store.Home) {
 function afterRender(state) {
   /*
   below are eventlisteners that work, but
-  I would like an alternative to the alert box that makes you click "OK"
+  I would like an alternative to the alert box that does not make you click "OK"
 
 
   document
@@ -108,3 +108,77 @@ router
     }
   })
   .resolve();
+
+let LocationList = [
+  {
+    id: 1,
+    name: "Tower Grove Park",
+    neighborhood: "Tower Grove",
+    safetyRating: null
+  },
+  {
+    id: 2,
+    name: "Forest Park",
+    neighborhood: "Forest Park",
+    safetyRating: null
+  },
+  {
+    id: 3,
+    name: "Francis Park",
+    neighborhood: "St. Louis Hills",
+    safetyRating: null
+  },
+  {
+    id: 4,
+    name: "Protagonist Cafe",
+    neighborhood: "Soulard",
+    safetyRating: null
+  },
+  {
+    id: 5,
+    name: "FiddleHead Fern Cafe",
+    neighborhood: "Shaw",
+    safetyRating: null
+  },
+  {
+    id: 6,
+    name: "Zoomies Pet Cafe",
+    neighborhood: "Princeton Heights",
+    safetyRating: null
+  }
+];
+
+//want to print out values of objects
+
+//sets variables equal to querySelector that matches criteria
+const userCardTemplate = document.querySelector("[data-user-template]");
+const userCardContainer = document.querySelector("[data-user-cards-container]");
+const searchInput = document.querySelector("[data-search]");
+//create array named users that is set to an empty value to change later
+let users = [];
+
+searchInput.addEventListener("input", e => {
+  //convert parameter target value to lowercase before looping is done
+  const value = e.target.value.toLowerCase();
+  //loop through each user array item to see if it includes value established in previous line
+  users.forEach(user => {
+    const isVisible =
+      user.name.toLowerCase().includes(value) ||
+      user.email.toLowerCase().includes(value);
+    user.element.classList.toggle("hide", !isVisible);
+  });
+});
+//placeholder data - NEEDS TO BE SWITCHED TO MY CREATED API
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then(res => res.json())
+  .then(data => {
+    users = data.map(user => {
+      const card = userCardTemplate.content.cloneNode(true).children[0];
+      const header = card.querySelector("[data-header]");
+      const body = card.querySelector("[data-body]");
+      header.textContent = user.name;
+      body.textContent = user.email;
+      userCardContainer.append(card);
+      return { name: user.name, email: user.email, element: card };
+    });
+  });

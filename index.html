@@ -10,8 +10,33 @@
 </head>
 
 <body>
+<!---
+  <div class="container">
+    <h1>&#x2728;Harry Potter Characters &#x2728;</h1>
+    <div id="searchWrapper">
+        <input
+            type="text"
+            name="searchBar"
+            id="searchBar"
+            placeholder="search for a character"
+        />
+    </div>
+    <ul id="charactersList"></ul>
+</div>
+-->
 
-  <!--unsure of how to integrate this. I want it on the home page but it won't fit in correctly. -->
+<div class="search-wrapper">
+  <label for="search">Search Users</label>
+  <input type="search" id="search" data-search>
+</div>
+<div class="user-cards" data-user-cards-container></div>
+<template data-user-template>
+  <div class="card">
+    <div class="header" data-header></div>
+    <div class="body" data-body></div>
+  </div>
+</template>
+
 
 
     <div id="root">

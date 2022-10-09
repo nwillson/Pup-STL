@@ -21,10 +21,16 @@ export default state => html`
     <div class = "logo"></div>
     <img src="https://i.ibb.co/Nthpwm1/logo-1.png">
 
-    <div class = "search"><label for="search">Search:</label>
-    <input type="text" name="search" id="search" placeholder="Search here" required />
-    </div>
+<!--search bar below-->
 
+
+<ul id="locationList"><div class = "search"><label for="search">Search:</label>
+    <input
+    type="text"
+    name="search"
+    id="search"
+    placeholder="Search here" required />
+    </div></ul>
 
     <div class = "title">
       <h1>A St. Louis Dog Owner Hub</h1>
