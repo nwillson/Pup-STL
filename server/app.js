@@ -1,5 +1,17 @@
 // 'Import' the http module
 const http = require("http");
+const mongoose = require("mongoose");
+
+mongoose.connect(process.env.MONGODB);
+
+const db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "Connection Error:"));
+db.once(
+  "open",
+  console.log.bind(console, "Successfully opened connection to Mongo!")
+);
+
 // Initialize the http server
 const server = http
   .createServer((request, response) => {
