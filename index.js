@@ -169,6 +169,7 @@ searchInput.addEventListener("input", e => {
   });
 });
 //placeholder data - NEEDS TO BE SWITCHED TO MY CREATED API
+//ALSO NEEDS TO BE MOVED TO HEADER. RUNNING INTO ERRORS
 fetch("https://jsonplaceholder.typicode.com/users")
   .then(res => res.json())
   .then(data => {

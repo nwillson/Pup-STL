@@ -42,6 +42,10 @@ export default () => html`
 
 <div class = "facts"><center><h2>More Information on Francis Park</h2></center></div>
 
+
+<div class="topPicks"><h1>Our Top Picks</h1></div>
+
+  <div class="crime"><h1>Crime</h1></div>
 `;
 
 // below is a slideshow feature I have been trying to implement. Found online, works in replit, not on VS Code

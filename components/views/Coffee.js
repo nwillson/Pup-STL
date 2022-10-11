@@ -13,5 +13,9 @@ export default () => html`
       <div class="zoomieHeader"><h1>Zoomies Pet Cafe</h1></div>
       <div class="facts"><h1>More Information on Zoomies Pet Cafe</h1></div>
     </div>
+
+    <div class="topPicks"><h1>Our Top Picks</h1></div>
+
+    <div class="crime"><h1>Crime</h1></div>
   </section>
 `;

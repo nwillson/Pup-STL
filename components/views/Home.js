@@ -39,9 +39,112 @@ export default state => html`
 
 
   </section>
-  <div class="crimeMap">
-    <h1>More Resources on Crime Here:</h1>
-<a href ="https://www.neighborhoodscout.com/mo/st-louis/crime"><h2>A Visual St. Louis City Crime Map</h2></a>
+
+
+<div class = "collection"><h1>An Entire Collection of Pup-STL's Dog Friendly Location List</h1></div>
+
+<div class = "tableList"><table style= "margin-left: auto; margin-right: auto;" >
+  <tr>
+    <th>Location Name:</th>
+    <th>Type of Establishment:</th>
+    <th>Safety Rating:</th>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+  <tr>
+  <td>Placeholder Name</td>
+  <td>Placeholder Type</td>
+  <td>Placeholder Safety Rating</td>
+  </tr>
+
+
+</table></div>
+
+
+
 
   </div>
+
+  <div class="crime"><h1>Crime</h1></div>
+  <div class="crimeMap">
+<a href ="https://www.neighborhoodscout.com/mo/st-louis/crime"><h2>A Visual St. Louis City Crime Map</h2></a>
+
+<div class = "iframe"><iframe src ="https://federalcos.com/blog/st-louis-mo-crime-rate/" width= 800px; height=700px;></iframe></div>
 `;
