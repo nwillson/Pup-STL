@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const pizzaSchema = new mongoose.Schema({
+const locationSchema = new mongoose.Schema({
   name: {
     type: String,
     validate: /^[A-Za-z ]*$/
@@ -15,9 +15,11 @@ const pizzaSchema = new mongoose.Schema({
   }
 });
 
-const Pizza = mongoose.model("Pizza", pizzaSchema);
+const Location = mongoose.model("Location", locationSchema);
 
-module.exports = Pizza;
+module.exports = Location;
+
+console.log(Location);
 
 /*const mongoose = require("mongoose");
 
