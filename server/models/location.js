@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const locationSchema = new mongoose.Schema({
   name: {
     type: String,
-    validate: /^[A-Za-z ]*$/
+    validate: /^[A-Za-z .!@#$%^&*]*$/
   },
   neighborhood: {
     type: String,
