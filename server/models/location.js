@@ -5,6 +5,9 @@ const locationSchema = new mongoose.Schema({
     type: String,
     validate: /^[A-Za-z .!@#$%^&*]*$/
   },
+  type: {
+    type: String
+  },
   neighborhood: {
     type: String,
     validate: /^[A-Za-z ]*$/
