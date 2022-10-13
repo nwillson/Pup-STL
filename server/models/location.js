@@ -10,7 +10,7 @@ const locationSchema = new mongoose.Schema({
   },
   neighborhood: {
     type: String,
-    validate: /^[A-Za-z ]*$/
+    validate: /^[A-Za-z .!@#$%^&*]*$/
   },
   safetyRating: {
     type: Number,
