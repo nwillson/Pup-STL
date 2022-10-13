@@ -109,45 +109,6 @@ router
   })
   .resolve();
 
-let LocationList = [
-  {
-    id: 1,
-    name: "Tower Grove Park",
-    neighborhood: "Tower Grove",
-    safetyRating: null
-  },
-  {
-    id: 2,
-    name: "Forest Park",
-    neighborhood: "Forest Park",
-    safetyRating: null
-  },
-  {
-    id: 3,
-    name: "Francis Park",
-    neighborhood: "St. Louis Hills",
-    safetyRating: null
-  },
-  {
-    id: 4,
-    name: "Protagonist Cafe",
-    neighborhood: "Soulard",
-    safetyRating: null
-  },
-  {
-    id: 5,
-    name: "FiddleHead Fern Cafe",
-    neighborhood: "Shaw",
-    safetyRating: null
-  },
-  {
-    id: 6,
-    name: "Zoomies Pet Cafe",
-    neighborhood: "Princeton Heights",
-    safetyRating: null
-  }
-];
-
 //want to print out values of objects
 
 //sets variables equal to querySelector that matches criteria
