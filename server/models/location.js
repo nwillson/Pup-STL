@@ -3,17 +3,15 @@ const mongoose = require("mongoose");
 const pizzaSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    validate: /^[A-Za-z ]*$/
   },
   neighborhood: {
     type: String,
-    required: true,
-    enum: ["thin", "chicago", "deep-dish", "hella-thick"]
+    validate: /^[A-Za-z ]*$/
   },
   safetyRating: {
-    type: String,
-    validate: /^[A-Za-z0-9 ]*$/
+    type: Number,
+    validate: /^[0-9]*$/
   }
 });
 
