@@ -3,6 +3,8 @@ import html from "html-literal";
 export default () => html`
   <section id="Coffee">
     <h1>Put this header below Crime Section</h1>
+
+    <div class="topPicks"><h1>Our Top Picks</h1></div>
     <h1>Put this header below "Our Top Picks"</h1>
     <div class="coffeeSpots">
       <div class="locationHeader"><h1>Protagonist Cafe</h1></div>
@@ -13,9 +15,6 @@ export default () => html`
       <div class="zoomieHeader"><h1>Zoomies Pet Cafe</h1></div>
       <div class="facts"><h1>More Information on Zoomies Pet Cafe</h1></div>
     </div>
-
-    <div class="topPicks"><h1>Our Top Picks</h1></div>
-
     <div class="crime"><h1>Crime</h1></div>
   </section>
 `;

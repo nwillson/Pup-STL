@@ -259,7 +259,8 @@ button {
 }
 
 .towerGrove {
-  width: 19%;
+  width: 18%;
+  border: 5px solid black;
 }
 
 .francisPark {

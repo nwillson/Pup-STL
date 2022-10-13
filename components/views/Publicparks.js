@@ -2,11 +2,9 @@ import html from "html-literal";
 
 export default () => html`
   <section id="Publicparks">
-    <h1>Placeholder Information for Public Parks</h1>
-    <h1>Put this header below Crime Section</h1>
 
-
-    <div class ="topPicksInfo"><h1>All information below goes to "Our Top Picks"</h1>
+<div class="topPicks"><h1>Our Top Picks</h1></div>
+<div class ="topPicksInfo"><h1>All information below goes to "Our Top Picks"</h1>
 
 <div class = "forestParkHeader"><h1>Forest Park</h1></div>
 
@@ -41,9 +39,6 @@ export default () => html`
 </section></div>
 
 <div class = "facts"><center><h2>More Information on Francis Park</h2></center></div>
-
-
-<div class="topPicks"><h1>Our Top Picks</h1></div>
 
   <div class="crime"><h1>Crime</h1></div>
 `;
