@@ -44,100 +44,23 @@ export default state => html`
 <div class = "collection"><h1>An Entire Collection of Pup-STL's Dog Friendly Location List</h1></div>
 
 <div class = "tableList"><table style= "margin-left: auto; margin-right: auto;" >
-  <tr>
+
+</table>
+
+</div>
+
+<table>
+      <thead>
+      <tr>
     <th>Location Name:</th>
     <th>Type of Establishment:</th>
     <th>Safety Rating:</th>
   </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-  <tr>
-  <td>Placeholder Name</td>
-  <td>Placeholder Type</td>
-  <td>Placeholder Safety Rating</td>
-  </tr>
-
-
-</table></div>
-
-
+      </thead>
+      <tbody id="data-output">
+         <!-- Prodcuts from javascript file in here. -->
+      </tbody>
+   </table>
 
 
   </div>

@@ -24,6 +24,7 @@ export default state => html`
 <!--search bar below-->
 
 
+
 <ul id="locationList"><div class = "search"><label for="search">Search:</label>
     <input
     type="text"

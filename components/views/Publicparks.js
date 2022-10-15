@@ -42,27 +42,3 @@ export default () => html`
 
   <div class="crime"><h1>Crime</h1></div>
 `;
-
-// below is a slideshow feature I have been trying to implement. Found online, works in replit, not on VS Code
-
-/*
-var slideIndex = 1;
-showDivs(slideIndex);
-function plusDivs(n) {
-  showDivs((slideIndex += n));
-}
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("forestPark");
-  if (n > x.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = x.length;
-  }
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x[slideIndex - 1].style.display = "block";
-}
-*/

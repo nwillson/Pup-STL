@@ -112,6 +112,7 @@ router
 //want to print out values of objects
 
 //sets variables equal to querySelector that matches criteria
+
 const userCardTemplate = document.querySelector("[data-user-template]");
 const userCardContainer = document.querySelector("[data-user-cards-container]");
 const searchInput = document.querySelector("[data-search]");
@@ -143,4 +144,28 @@ fetch("https://jsonplaceholder.typicode.com/users")
       userCardContainer.append(card);
       return { name: user.name, email: user.email, element: card };
     });
+  });
+
+//fetches API and returns it in JSON format
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(users) {
+    //placeholder variable is equal to query Selector of data-output
+    let placeholder = document.querySelector("#data-output");
+    //set variable to empty string to later be filled in by loop
+    let out = "";
+
+    //adds and reassigns "out" to new variable using user.name&email
+    for (let user of users) {
+      out += `
+         <tr>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+         </tr>
+      `;
+    }
+
+    placeholder.innerHTML = out;
   });
