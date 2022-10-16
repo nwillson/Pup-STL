@@ -244,7 +244,6 @@ button {
     border-radius: 30px;
     background-color: #00244c;
     background-position: center;
-    background-attachment: absolute;
     color: white;
     margin: 0 auto;
 }
