@@ -60,11 +60,23 @@ function afterRender(state) {
   });
 }
 
+//SEARCH BAR IMPLEMENTATION BELOW
+
 const userCardTemplate = document.querySelector("[data-user-template]");
 const userCardContainer = document.querySelector("[data-user-cards-container]");
 const searchInput = document.querySelector("[data-search]");
 
 let users = [];
+
+searchInput.addEventListener("input", e => {
+  const value = e.target.value.toLowerCase();
+  users.forEach(user => {
+    const isVisible =
+      user.name.toLowerCase().includes(value) ||
+      user.email.toLowerCase().includes(value);
+    user.element.classList.toggle("hide", !isVisible);
+  });
+});
 
 router.hooks({
   before: (done, params) => {
@@ -101,10 +113,7 @@ router.hooks({
 
         //add axios call HERE
 
-        /*
-        attempted axios call DID NOT WORK
-
-  axios
+        axios
           .get(`https://pup-stl.herokuapp.com/locations`)
 
           .then(response => {
@@ -146,55 +155,6 @@ router.hooks({
           });
         done();
 
-        */
-
-        searchInput.addEventListener("input", e => {
-          const value = e.target.value.toLowerCase();
-          users.forEach(user => {
-            const isVisible =
-              user.name.toLowerCase().includes(value) ||
-              user.email.toLowerCase().includes(value);
-            user.element.classList.toggle("hide", !isVisible);
-          });
-        });
-
-        fetch("https://jsonplaceholder.typicode.com/users")
-          .then(res => res.json())
-          .then(data => {
-            users = data.map(user => {
-              const card = userCardTemplate.content.cloneNode(true).children[0];
-              const header = card.querySelector("[data-header]");
-              const body = card.querySelector("[data-body]");
-              header.textContent = user.name;
-              body.textContent = user.email;
-              userCardContainer.append(card);
-              return { name: user.name, email: user.email, element: card };
-            });
-          });
-
-        fetch("https://pup-stl.herokuapp.com/locations")
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(users) {
-            //placeholder variable is equal to query Selector of data-output
-            let placeholder = document.querySelector("#data-output");
-            //set variable to empty string to later be filled in by loop
-            let out = "";
-
-            //adds and reassigns "out" to new variable using user.name&email
-            for (let user of users) {
-              out += `
-         <tr>
-            <td>${user.name}</td>
-            <td>${user.type}</td>
-            <td>${user.safetyRating}</td>
-         </tr>
-      `;
-            }
-
-            placeholder.innerHTML = out;
-          });
         break;
       default:
         done();
@@ -211,12 +171,3 @@ router
     }
   })
   .resolve();
-
-//want to print out values of objects
-
-//sets variables equal to querySelector that matches criteria
-
-//placeholder data - NEEDS TO BE SWITCHED TO MY CREATED API
-//ALSO NEEDS TO BE MOVED TO HEADER. RUNNING INTO ERRORS
-
-//fetches API and returns it in JSON format

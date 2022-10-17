@@ -49,7 +49,8 @@ export default state => html`
 
 </div>
 
-<table>
+
+<div class = "dynamicTable"><table>
       <thead>
       <tr>
     <th>Location Name:</th>
@@ -64,6 +65,7 @@ export default state => html`
 
 
   </div>
+</div>
 
   <div class="crime"><h1>Crime</h1></div>
   <div class="crimeMap">

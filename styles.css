@@ -520,9 +520,20 @@ margin-left: auto;
 margin-right: auto;
 }
 
+/*
+TRYING TO CENTER, WON'T WORK
+
+.dynamicTable {
+  text-align:center;
+  display:block;
+  background-position: center;
+  margin: 0 auto;
+  color: blue;
+ }
+*/
 th {
 text-align: center;
-/*display: block;*/
+
 line-height: 25px;
 -moz-border-radius: 30px;
 width: 300px;
@@ -543,4 +554,24 @@ width: 300px;
 
  .additionalInformation {
   height: 800px;
+ }
+
+ .singlePics {
+
+ }
+
+ .gatedDogParkHeader {
+  font-family: cinzel;
+  display: block;
+  text-align: center;
+    height: 50px;
+    width: 400px;
+    line-height: 50px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #d72323;
+    background-position: center;
+    color: white;
+    margin: 0 auto;
+    margin-top: 45px;
  }
