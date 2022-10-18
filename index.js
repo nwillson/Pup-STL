@@ -137,16 +137,19 @@ router.hooks({
             done();
           });
 
-        axios
-          .get(`https://pup-stl.herokuapp.com/locations`)
-          .then(function(users) {
+        // eslint-disable-next-line prettier/prettier
+        axios.get(`https://pup-stl.herokuapp.com/locations`)
+        .then(response => {
+
+          function loopTable(users) {
             //placeholder variable is equal to query Selector of data-output
             let placeholder = document.querySelector("#data-output");
             //set variable to empty string to later be filled in by loop
             let out = "";
 
             //adds and reassigns "out" to new variable using user.name&email
-            for (let user of users) {
+
+            for (let user in users) {
               out += `
          <tr>
             <td>${user.name}</td>
@@ -156,7 +159,10 @@ router.hooks({
       `;
             }
             placeholder.innerHTML = out;
-          });
+          }
+
+          loopTable(response);
+        });
         done();
 
         break;

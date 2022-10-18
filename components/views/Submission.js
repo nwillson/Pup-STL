@@ -2,9 +2,10 @@ import html from "html-literal";
 
 export default () => html`
 
-
-  <form id="order" method="POST" action="">
-     <div class = "submit"><h1>
+<form
+  action="https://formspree.io/f/xlevwjqy"
+  method="POST"
+>  <div class = "submit"><h1>
         Make a Submission! Let us know about your favorite Dog-Friendly Place!
       </h1></div>
       <div class = "formBox"><div>
@@ -40,6 +41,7 @@ export default () => html`
 
 
 
-      <input type="submit" name="submit" value="Submit" />
-    </form
+      <input type="submit" name="submit" value="Submit" /></form>
+
+
 `;
