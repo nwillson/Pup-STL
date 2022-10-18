@@ -575,3 +575,10 @@ width: 300px;
     margin: 0 auto;
     margin-top: 45px;
  }
+
+ .factsText {
+  margin-top: 5px;
+  margin-right: 2px;
+  margin-left:2px;
+  text-align:center;
+ }

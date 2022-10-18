@@ -62,22 +62,6 @@ function afterRender(state) {
 
 //SEARCH BAR IMPLEMENTATION BELOW
 
-const userCardTemplate = document.querySelector("[data-user-template]");
-const userCardContainer = document.querySelector("[data-user-cards-container]");
-const searchInput = document.querySelector("[data-search]");
-
-let users = [];
-
-searchInput.addEventListener("input", e => {
-  const value = e.target.value.toLowerCase();
-  users.forEach(user => {
-    const isVisible =
-      user.name.toLowerCase().includes(value) ||
-      user.email.toLowerCase().includes(value);
-    user.element.classList.toggle("hide", !isVisible);
-  });
-});
-
 router.hooks({
   before: (done, params) => {
     const view =
@@ -117,7 +101,27 @@ router.hooks({
           .get(`https://pup-stl.herokuapp.com/locations`)
 
           .then(response => {
-            users = response.map(user => {
+            const userCardTemplate = document.querySelector(
+              "[data-user-template]"
+            );
+            const userCardContainer = document.querySelector(
+              "[data-user-cards-container]"
+            );
+            const searchInput = document.querySelector("[data-search]");
+
+            let users = [];
+
+            searchInput.addEventListener("input", e => {
+              const value = e.target.value.toLowerCase();
+              users.forEach(user => {
+                const isVisible =
+                  user.name.toLowerCase().includes(value) ||
+                  user.email.toLowerCase().includes(value);
+                user.element.classList.toggle("hide", !isVisible);
+              });
+            });
+
+            response.data.map(user => {
               const card = userCardTemplate.content.cloneNode(true).children[0];
               const header = card.querySelector("[data-header]");
               const body = card.querySelector("[data-body]");
