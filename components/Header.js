@@ -21,19 +21,6 @@ export default state => html`
     <div class = "logo"></div>
     <img src="https://i.ibb.co/Nthpwm1/logo-1.png">
 
-<!--search bar below-->
-
-
-
-<ul id="locationList"><div class = "search"><label for="search">Search:</label>
-    <input
-    type="text"
-    name="search"
-    id="search"
-    placeholder="Search here" required />
-
-    </div></ul>
-
     <div class = "title">
       <h1>A St. Louis Dog Owner Hub</h1>
       </div>
@@ -54,8 +41,10 @@ export default state => html`
       <div id="six"><img src="https://i.ibb.co/P4nKrwX/St-Louis-8.jpg" /></div>
     </div>
 
+    <div id="where"><h1>Where Would You Like To Go?</h1></div>
+
     <div class="options">
-      <div id="where"><h1>Where Would You Like To Go?</h1></div>
+
       <div class="publicParks">
         <button><h2>Public Parks</h2></button>
       </div>

@@ -1,9 +1,11 @@
 html, body {
   height: 100%;
   width: 100%;
+
+  background: url("https://i.ibb.co/Jmnf8yz/backgroundpic1.webp") repeat 0 0;
+
 }
 
-@media (max-width: 699px) {
     .title {
       width: 100%;
     }
@@ -18,7 +20,6 @@ html, body {
     .iframe {
     display:none;
     }
-}
 
 .appName {
   font-family: cinzel;
@@ -112,19 +113,19 @@ flex-direction: row;
 }
 
 #where {
+  font-family: cinzel;
   display: block;
-  height: 44px;
-    width: 400px;
-    line-height: 40px;
+  text-align: center;
+    height: 60px;
+    width: 500px;
+    line-height: 60px;
     -moz-border-radius: 30px;
     border-radius: 30px;
     background-color: #00244c;
     background-position: center;
+    background-attachment: absolute;
     color: white;
-    margin-top: 0 auto;
-/*Struggling to center and move up a bit *********************************************************/
-  font-size: 14px;
-  text-align: center;
+    margin: 0 auto;
 
 }
 
@@ -141,7 +142,7 @@ button {
     background-position: center;
     color: white;
     margin: 0 auto;
-    margin-top: 45px;
+    margin-top: 50px;
 }
 
 /*
@@ -258,17 +259,41 @@ button {
 }
 
 .towerGrove {
-  width: 18%;
-  border: 5px solid black;
+  margin-top: 2%;
+  width: 19%;
 }
 
 .francisPark {
   width: 19%;
+  height: 160px;
+}
 
+.francisParkBig {
+  margin-top: 40px;
+  width: 17%;
 }
 
 .topPicksInfo {
   text-align: center;
+}
+
+.stJohns {
+  margin-top: 2%;
+  width: 19%;
+}
+
+.shawPics {
+  margin-left: 2%;
+  margin-top: 2%;
+  width: 17%;
+  height: 160px;
+}
+
+.shawPics1 {
+  height: 160px;
+  width: 17%;
+  margin-left: 3.7%;
+  margin-right: 1%;
 }
 
 .facts {

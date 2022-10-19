@@ -40,5 +40,5 @@ export default state => html`
   <div class="crimeMap">
 <a href ="https://www.neighborhoodscout.com/mo/st-louis/crime"><h2>A Visual St. Louis City Crime Map</h2></a>
 
-<div class = "iframe"><iframe src ="https://federalcos.com/blog/st-louis-mo-crime-rate/" width= 800px; height=800px;></iframe></div>
+<iframe src = "https://federalcos.com/blog/st-louis-mo-crime-rate/" width= 800px; height= 800px;></iframe>
 `;

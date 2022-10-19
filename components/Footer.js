@@ -19,7 +19,7 @@ export default state => html`
       .map(location => {
         return `<div class="card">
     <div class="header" data-header>${location.name}</div>
-    <div class="body" data-body>${location.safetyRating}</div>
+    <div class="body" data-body>Safety Rating: ${location.safetyRating}</div>
   </div>
 `;
       })
