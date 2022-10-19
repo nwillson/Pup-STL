@@ -12,7 +12,7 @@ function render(state = store.Home) {
       ${Header(store.Header)}
       ${Nav(store.Links)}
       ${Main(state)}
-      ${Footer()}
+      ${Footer(store.Home)}
     `;
 
   afterRender(state);
@@ -60,42 +60,119 @@ function afterRender(state) {
   });
 }
 
+//SEARCH BAR IMPLEMENTATION BELOW
+
 router.hooks({
   before: (done, params) => {
     const view =
       params && params.data && params.data.view
         ? capitalize(params.data.view)
         : "Home";
-
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
-      )
-      .then(response => {
-        const kelvinToFahrenheit = kelvinTemp =>
-          Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
-
-        store.Header.weather = {};
-        store.Header.weather.city = response.data.name;
-        store.Header.weather.temp = kelvinToFahrenheit(response.data.main.temp);
-        store.Header.weather.feelsLike = kelvinToFahrenheit(
-          response.data.main.feels_like
-        );
-        store.Header.weather.description = response.data.weather[0].main;
-
-        console.log(response.data);
-        done();
-      })
-      .catch(err => console.log(err));
-
-    // Add a switch case statement to handle multiple routes
-    /*switch (view) {
+    switch (view) {
       case "Home":
+        axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
+          )
+          .then(response => {
+            const kelvinToFahrenheit = kelvinTemp =>
+              Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+
+            store.Header.weather = {};
+            store.Header.weather.city = response.data.name;
+            store.Header.weather.temp = kelvinToFahrenheit(
+              response.data.main.temp
+            );
+            store.Header.weather.feelsLike = kelvinToFahrenheit(
+              response.data.main.feels_like
+            );
+            store.Header.weather.description = response.data.weather[0].main;
+
+            console.log(response.data);
+            done();
+          })
+          .catch(err => console.log(err));
+
+        // Add a switch case statement to handle multiple routes
+
+        //add axios call HERE
+
+        axios
+          .get(`https://pup-stl.herokuapp.com/locations`)
+
+          .then(response => {
+            store.Home.locations = response.data;
+            console.log(store.Home.locations);
+            /*
+            const userCardTemplate = document.querySelector(
+              "[data-user-template]"
+            );
+            const userCardContainer = document.querySelector(
+              "[data-user-cards-container]"
+            );
+            const searchInput = document.querySelector("[data-search]");
+
+            let users = [];
+
+            searchInput.addEventListener("input", e => {
+              const value = e.target.value.toLowerCase();
+              users.forEach(user => {
+                const isVisible =
+                  user.name.toLowerCase().includes(value) ||
+                  user.email.toLowerCase().includes(value);
+                user.element.classList.toggle("hide", !isVisible);
+              });
+            });
+
+            response.data.map(user => {
+              const card = userCardTemplate.content.cloneNode(true).children[0];
+              const header = card.querySelector("[data-header]");
+              const body = card.querySelector("[data-body]");
+              header.textContent = user.name;
+              body.textContent = "Safety Rating: " + user.safetyRating;
+              userCardContainer.append(card);
+              return {
+                name: user.name,
+                safetyRating: user.safetyRating,
+                element: card
+              };
+            });
+            */
+            done();
+          });
+
+        // eslint-disable-next-line prettier/prettier
+        axios.get(`https://pup-stl.herokuapp.com/locations`)
+        .then(response => {
+
+          function loopTable(users) {
+            //placeholder variable is equal to query Selector of data-output
+            let placeholder = document.querySelector("#data-output");
+            //set variable to empty string to later be filled in by loop
+            let out = "";
+
+            //adds and reassigns "out" to new variable using user.name&email
+
+            for (let user of users.data) {
+              out += `
+         <tr>
+            <td>${user.name}</td>
+            <td>${user.type}</td>
+            <td>${user.safetyRating}</td>
+         </tr>
+      `;
+            }
+            placeholder.innerHTML = out;
+          }
+
+          loopTable(response);
+        });
+        done();
+
         break;
       default:
         done();
     }
-    */
   }
 });
 
@@ -108,21 +185,15 @@ router
     }
   })
   .resolve();
-
-//want to print out values of objects
-
-//sets variables equal to querySelector that matches criteria
-
+/*
 const userCardTemplate = document.querySelector("[data-user-template]");
 const userCardContainer = document.querySelector("[data-user-cards-container]");
 const searchInput = document.querySelector("[data-search]");
-//create array named users that is set to an empty value to change later
+
 let users = [];
 
 searchInput.addEventListener("input", e => {
-  //convert parameter target value to lowercase before looping is done
   const value = e.target.value.toLowerCase();
-  //loop through each user array item to see if it includes value established in previous line
   users.forEach(user => {
     const isVisible =
       user.name.toLowerCase().includes(value) ||
@@ -130,8 +201,7 @@ searchInput.addEventListener("input", e => {
     user.element.classList.toggle("hide", !isVisible);
   });
 });
-//placeholder data - NEEDS TO BE SWITCHED TO MY CREATED API
-//ALSO NEEDS TO BE MOVED TO HEADER. RUNNING INTO ERRORS
+
 fetch("https://jsonplaceholder.typicode.com/users")
   .then(res => res.json())
   .then(data => {
@@ -145,27 +215,4 @@ fetch("https://jsonplaceholder.typicode.com/users")
       return { name: user.name, email: user.email, element: card };
     });
   });
-
-//fetches API and returns it in JSON format
-fetch("https://jsonplaceholder.typicode.com/users")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(users) {
-    //placeholder variable is equal to query Selector of data-output
-    let placeholder = document.querySelector("#data-output");
-    //set variable to empty string to later be filled in by loop
-    let out = "";
-
-    //adds and reassigns "out" to new variable using user.name&email
-    for (let user of users) {
-      out += `
-         <tr>
-            <td>${user.name}</td>
-            <td>${user.email}</td>
-         </tr>
-      `;
-    }
-
-    placeholder.innerHTML = out;
-  });
+  */

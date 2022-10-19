@@ -35,7 +35,10 @@ export default () => html`
 <div class = "francisParkHeader"><h1>Francis Park</h1></div>
 <img class="francisPark" src="https://i.ibb.co/gJq6L2J/Francis-Park-1.jpg" />
 <img class="francisPark" src="https://i.ibb.co/M1C2WFk/Francis-Park-2.jpg" />
+<img class= "francisParkBig" src="https://i.ibb.co/pvV182k/francispark4.jpg"/>
 <img class="francisPark" src="https://i.ibb.co/C0wV6sr/Francis-Park-3.jpg" />
+<img class = "francisPark" src="https://i.ibb.co/XSmvx92/francispark5.jpg"/>
+
 </section></div>
 
 <div class = "facts"><center><h2>More Information on Francis Park</h2></center></div>
