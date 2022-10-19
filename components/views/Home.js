@@ -27,6 +27,15 @@ export default state => html`
         </tr>
       </thead>
       <tbody id="data-output">
+${state.locations.map(location => {
+  return `<tr>
+            <td>${location.name}</td>
+            <td>${location.type}</td>
+            <td>${location.safetyRating}</td>
+         </tr>`;
+})}
+
+
         <!-- Prodcuts from javascript file in here. -->
       </tbody>
     </table>

@@ -4,6 +4,7 @@ import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
 import dotenv from "dotenv";
+dotenv.config();
 
 const router = new Navigo("/");
 
@@ -142,37 +143,19 @@ router.hooks({
           });
 
         // eslint-disable-next-line prettier/prettier
-        axios.get(`https://pup-stl.herokuapp.com/locations`)
-        .then(response => {
-
-          function loopTable(users) {
-            //placeholder variable is equal to query Selector of data-output
-            let placeholder = document.querySelector("#data-output");
-            //set variable to empty string to later be filled in by loop
-            let out = "";
-
-            //adds and reassigns "out" to new variable using user.name&email
-
-            for (let user of users.data) {
-              out += `
-         <tr>
-            <td>${user.name}</td>
-            <td>${user.type}</td>
-            <td>${user.safetyRating}</td>
-         </tr>
-      `;
-            }
-            placeholder.innerHTML = out;
-          }
-
-          loopTable(response);
-        });
-        done();
 
         break;
       default:
         done();
     }
+  },
+  already: params => {
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
+        : "Home";
+
+    render(store[view]);
   }
 });
 
