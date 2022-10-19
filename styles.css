@@ -582,3 +582,18 @@ width: 300px;
   margin-left:2px;
   text-align:center;
  }
+
+ .search-wrapper {
+  margin-top: 50px;
+ }
+
+ .rbPics {
+ width: 25%;
+ margin: 0 auto;
+ }
+
+ .rnbPics {
+  display: block;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+ }

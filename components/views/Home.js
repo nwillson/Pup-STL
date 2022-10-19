@@ -17,19 +17,20 @@ export default state => html`
 
 </div>
 
-
-<div class = "dynamicTable"><table>
+<div class="dynamicTable">
+    <table>
       <thead>
-      <tr>
-    <th>Location Name:</th>
-    <th>Type of Establishment:</th>
-    <th>Safety Rating:</th>
-  </tr>
+        <tr>
+          <th>Location Name:</th>
+          <th>Type of Establishment:</th>
+          <th>Safety Rating:</th>
+        </tr>
       </thead>
       <tbody id="data-output">
-         <!-- Prodcuts from javascript file in here. -->
+        <!-- Prodcuts from javascript file in here. -->
       </tbody>
-   </table>
+    </table>
+
 
 
   </div>
@@ -39,5 +40,5 @@ export default state => html`
   <div class="crimeMap">
 <a href ="https://www.neighborhoodscout.com/mo/st-louis/crime"><h2>A Visual St. Louis City Crime Map</h2></a>
 
-<div class = "iframe"><iframe src ="https://federalcos.com/blog/st-louis-mo-crime-rate/" width= 800px; height=700px;></iframe></div>
+<div class = "iframe"><iframe src ="https://federalcos.com/blog/st-louis-mo-crime-rate/" width= 800px; height=800px;></iframe></div>
 `;

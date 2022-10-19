@@ -3,9 +3,12 @@ import html from "html-literal";
 export default () => html`
   <section id="Restaurantsbars">
     <div class="topPicks"><h1>Our Top Picks</h1></div>
-    <h1>Put this header below "Our Top Picks"</h1>
 
     <div class="gatedDogParkHeader"><h1>The Boathouse at Forest Park</h1></div>
+    <img class="rbPics" src="https://i.ibb.co/zRSZxyn/boathouse1.jpg" />
+    <img class="rbPics" src="https://i.ibb.co/tP5ZfcP/boathouse2.jpg" />
+    <img class="rbPics" src="https://i.ibb.co/B33q61B/boathouse3.jpg" />
+
     <div class="facts">
       <div class="factsText">
         <h2>More Information on The Boathouse</h2>
@@ -18,6 +21,23 @@ export default () => html`
     </div>
 
     <div class="gatedDogParkHeader"><h1>Rockwell Beer Garden</h1></div>
+
+    <div class="rnbPics">
+      <img
+        class="rbPics"
+        src="https://i.ibb.co/1ZMz3FL/rockwellbeergarden1.jpg"
+      />
+      <img
+        class="rbPics"
+        src="https://i.ibb.co/N74Hpkv/rockwellbeergarden2.jpg"
+      />
+
+      <img
+        class="rbPics"
+        src="https://i.ibb.co/fXDZB3w/rockwellbeergarden3.jpg"
+      />
+    </div>
+
     <div class="facts">
       <div class="factsText">
         <h2>More Information on Rockwell Beer Garden</h2>

@@ -12,7 +12,7 @@ function render(state = store.Home) {
       ${Header(store.Header)}
       ${Nav(store.Links)}
       ${Main(state)}
-      ${Footer()}
+      ${Footer(store.Home)}
     `;
 
   afterRender(state);
@@ -101,6 +101,9 @@ router.hooks({
           .get(`https://pup-stl.herokuapp.com/locations`)
 
           .then(response => {
+            store.Home.locations = response.data;
+            console.log(store.Home.locations);
+            /*
             const userCardTemplate = document.querySelector(
               "[data-user-template]"
             );
@@ -126,7 +129,7 @@ router.hooks({
               const header = card.querySelector("[data-header]");
               const body = card.querySelector("[data-body]");
               header.textContent = user.name;
-              body.textContent = user.safetyRating;
+              body.textContent = "Safety Rating: " + user.safetyRating;
               userCardContainer.append(card);
               return {
                 name: user.name,
@@ -134,6 +137,7 @@ router.hooks({
                 element: card
               };
             });
+            */
             done();
           });
 
@@ -149,7 +153,7 @@ router.hooks({
 
             //adds and reassigns "out" to new variable using user.name&email
 
-            for (let user in users) {
+            for (let user of users.data) {
               out += `
          <tr>
             <td>${user.name}</td>
@@ -181,3 +185,34 @@ router
     }
   })
   .resolve();
+/*
+const userCardTemplate = document.querySelector("[data-user-template]");
+const userCardContainer = document.querySelector("[data-user-cards-container]");
+const searchInput = document.querySelector("[data-search]");
+
+let users = [];
+
+searchInput.addEventListener("input", e => {
+  const value = e.target.value.toLowerCase();
+  users.forEach(user => {
+    const isVisible =
+      user.name.toLowerCase().includes(value) ||
+      user.email.toLowerCase().includes(value);
+    user.element.classList.toggle("hide", !isVisible);
+  });
+});
+
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then(res => res.json())
+  .then(data => {
+    users = data.map(user => {
+      const card = userCardTemplate.content.cloneNode(true).children[0];
+      const header = card.querySelector("[data-header]");
+      const body = card.querySelector("[data-body]");
+      header.textContent = user.name;
+      body.textContent = user.email;
+      userCardContainer.append(card);
+      return { name: user.name, email: user.email, element: card };
+    });
+  });
+  */
