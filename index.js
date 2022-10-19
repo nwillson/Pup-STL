@@ -48,7 +48,7 @@ function afterRender(state) {
 */
   //below is a new set of event listeners intended to change the color of the buttons on the click
   //Public Parks works in an unintended way, but the rest do not work at all.
-
+  /*
   const button = document.querySelector(
     ".publicParks",
     ".gatedDogParks",
@@ -59,6 +59,7 @@ function afterRender(state) {
   button.addEventListener("click", function onClick() {
     button.style.backgroundColor = "salmon";
   });
+*/
 }
 
 //SEARCH BAR IMPLEMENTATION BELOW
