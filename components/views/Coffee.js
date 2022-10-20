@@ -2,14 +2,26 @@ import html from "html-literal";
 
 export default () => html`
   <section id="Coffee">
+    <div class="introToPage">
+      <h3>
+        If you ask us, there's no two better things than coffee and dogs. Use
+        the Pup-STL application to combine these two delicacies into one. <br />
+        <br />
+        Some locations may be patio friendly only. Always make sure to do your
+        research before committing to a place!
+      </h3>
+    </div>
     <div class="topPicks"><h1>Our Top Picks</h1></div>
     <div class="coffeeSpots">
       <div class="locationHeader"><h1>Protagonist Cafe</h1></div>
-      <img src="https://i.ibb.co/ZmrRz5V/protagonistcafe1.jpg" />
 
-      <img src="https://i.ibb.co/q9Tm3y9/protagonistcafe3.jpg" />
+      <div class="picBlock">
+        <img src="https://i.ibb.co/ZmrRz5V/protagonistcafe1.jpg" />
 
-      <img src="https://i.ibb.co/nwdt3QD/protagonistcafe2.jpg" />
+        <img src="https://i.ibb.co/q9Tm3y9/protagonistcafe3.jpg" />
+
+        <img src="https://i.ibb.co/nwdt3QD/protagonistcafe2.jpg" />
+      </div>
 
       <div class="facts">
         <h2>More information on Protagonist Cafe</h2>
@@ -21,12 +33,13 @@ export default () => html`
       </div>
 
       <div class="fiddleHeader"><h1>Fiddlehead Fern Cafe</h1></div>
+      <div class="picBlock">
+        <img src="https://i.ibb.co/H7ZPW06/fiddlehead1.jpg" />
 
-      <img src="https://i.ibb.co/H7ZPW06/fiddlehead1.jpg" />
+        <img src="https://i.ibb.co/L12wWcW/fiddlehead2.jpg" />
 
-      <img src="https://i.ibb.co/L12wWcW/fiddlehead2.jpg" />
-
-      <img src="https://i.ibb.co/WP65sJV/fiddlehead3.jpg" />
+        <img src="https://i.ibb.co/WP65sJV/fiddlehead3.jpg" />
+      </div>
 
       <div class="facts">
         <h1>More Information on Fiddlehead Fern Cafe</h1>
@@ -41,11 +54,13 @@ export default () => html`
 
       <div class="zoomieHeader"><h1>Zoomies Pet Cafe</h1></div>
 
-      <img src="https://i.ibb.co/v4vs02M/zoomies1.jpg" />
+      <div class="picBlock">
+        <img src="https://i.ibb.co/v4vs02M/zoomies1.jpg" />
 
-      <img src="https://i.ibb.co/17NFSpr/zoomies2.jpg" />
+        <img src="https://i.ibb.co/17NFSpr/zoomies2.jpg" />
 
-      <img src="https://i.ibb.co/S3vgPmX/zoomies3.jpg" />
+        <img src="https://i.ibb.co/S3vgPmX/zoomies3.jpg" />
+      </div>
 
       <div class="facts">
         <h1>More Information on Zoomies Pet Cafe</h1>

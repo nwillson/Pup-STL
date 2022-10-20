@@ -2,12 +2,26 @@ import html from "html-literal";
 
 export default () => html`
   <section id="Restaurantsbars">
+    <div class="introToPage">
+      <h3>
+        St. Louis is home to an extraordinarily friendly dog-community, and many
+        welcoming Restaurants and Bars. <br />
+        <br />
+        Some of Pup-STL's locations are only <b>patio</b> friendly. Always make
+        sure to call ahead or do your research before commiting to a place!
+      </h3>
+    </div>
     <div class="topPicks"><h1>Our Top Picks</h1></div>
 
     <div class="gatedDogParkHeader"><h1>The Boathouse at Forest Park</h1></div>
-    <img class="rbPics" src="https://i.ibb.co/zRSZxyn/boathouse1.jpg" />
-    <img class="rbPics" src="https://i.ibb.co/tP5ZfcP/boathouse2.jpg" />
-    <img class="rbPics" src="https://i.ibb.co/B33q61B/boathouse3.jpg" />
+
+    <div class="picBlock">
+      <img class="rbPics" src="https://i.ibb.co/tP5ZfcP/boathouse2.jpg" />
+      <img class="rbPics" src="https://i.ibb.co/QcHPkcj/boathouse1.jpg" />
+      <img class="rbPics" src="https://i.ibb.co/yp7XFbK/boathouse-4.jpg" />
+      <img class="rbPics" src="https://i.ibb.co/fpwf1Kc/boathouse3.jpg" />
+      <img class="rbPics" src="https://i.ibb.co/t8tX1MC/boathouse2.jpg" />
+    </div>
 
     <div class="facts">
       <div class="factsText">
@@ -22,7 +36,7 @@ export default () => html`
 
     <div class="gatedDogParkHeader"><h1>Rockwell Beer Garden</h1></div>
 
-    <div class="rnbPics">
+    <div class="picBlock">
       <img
         class="rbPics"
         src="https://i.ibb.co/1ZMz3FL/rockwellbeergarden1.jpg"

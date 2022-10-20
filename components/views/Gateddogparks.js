@@ -1,6 +1,17 @@
 import html from "html-literal";
 
 export default state => html`
+  <div class="introToPage">
+    <h3>
+      Many of our Gated Dog Parks are beautiful, welcoming, and fun. Some have
+      certain restrictions, such as pet interviews, breed restrictions, or wait
+      lists. <br />
+      <br />
+      Always make sure to do your research before committing to a place, and
+      make sure you are ready to go for you and your pup to have a great time!
+    </h3>
+  </div>
+
   <div class="topPicks"><h1>Our Top Picks</h1></div>
   <section id="Gateddogparks">
     <div class="gatedDogParkHeader"><h1>Southwest City Dog Park</h1></div>
@@ -19,15 +30,17 @@ export default state => html`
 
     <div class="gatedDogParkHeader"><h1>Shaw Dog Park</h1></div>
 
-    <img class="shawPics" src="https://i.ibb.co/7bQRw8G/Shaw-Dog-Park.jpg" />
+    <div class="picBlock">
+      <img class="shawPics" src="https://i.ibb.co/7bQRw8G/Shaw-Dog-Park.jpg" />
 
-    <img class="shawPics" src="https://i.ibb.co/pjY3Vdb/shawdogpark2.jpg" />
+      <img class="shawPics" src="https://i.ibb.co/pjY3Vdb/shawdogpark2.jpg" />
 
-    <img class="shawPics1" src="https://i.ibb.co/hXT1S9K/shawdogpark4.png" />
+      <img class="shawPics1" src="https://i.ibb.co/hXT1S9K/shawdogpark4.png" />
 
-    <img class="shawPics" src="https://i.ibb.co/gr6zTg6/shawdogpark3.jpg" />
+      <img class="shawPics" src="https://i.ibb.co/gr6zTg6/shawdogpark3.jpg" />
 
-    <img class="shawPics" src="https://i.ibb.co/bHGw43c/shawdogpark5.jpg" />
+      <img class="shawPics" src="https://i.ibb.co/bHGw43c/shawdogpark5.jpg" />
+    </div>
 
     <div class="facts">
       <div class="factsText">
