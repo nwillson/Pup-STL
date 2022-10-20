@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default () => html`
+export default state => html`
   <section id="Coffee">
     <div class="introToPage">
       <h3>
@@ -72,5 +72,41 @@ export default () => html`
       </div>
     </div>
     <div class="crime"><h1>Crime</h1></div>
+
+    <div class = "tableList"><table style= "margin-left: auto; margin-right: auto;" >
+
+</table>
+
+</div>
+
+<div class="dynamicTable">
+    <table>
+      <thead>
+        <tr>
+          <th>Location Name:</th>
+          <th>Type of Establishment:</th>
+          <th>Safety Rating:</th>
+        </tr>
+      </thead>
+      <tbody id="data-output">
+${state.locations.filter(function(location) {
+  if (location.type == "Coffee") {
+    return `<tr>
+            <td>${location.name}</td>
+            <td>${location.type}</td>
+            <td>${location.safetyRating}</td>
+         </tr>`;
+  }
+})};
+
+        <!-- Prodcuts from javascript file in here. -->
+      </tbody>
+    </table>
+
+
+
+  </div>
+</div>
+
   </section>
 `;

@@ -1,11 +1,5 @@
 export default {
   header: "Coffee",
-  view: "Coffee"
+  view: "Coffee",
+  locations: []
 };
-
-let coffeeLocations = location.filter(function(location) {
-  return location.type == "Coffee";
-});
-
-console.log(coffeeLocations);
-

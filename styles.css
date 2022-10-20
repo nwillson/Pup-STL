@@ -365,49 +365,6 @@ flex-direction: row;
     margin-top: 45px;
 }
 
-.container {
-  padding: 40px;
-  margin: 0 auto;
-  max-width: 1000px;
-  text-align: center;
-}
-
-#charactersList {
-  padding-inline-start: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 20px;
-}
-
-.character {
-  list-style-type: none;
-  background-color: #eaeaea;
-  border-radius: 3px;
-  padding: 10px 20px;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-areas:
-      'name image'
-      'house image';
-  text-align: left;
-}
-
-.character > h2 {
-  grid-area: name;
-  margin-bottom: 0px;
-}
-
-.character > p {
-  grid-area: house;
-  margin: 0;
-  margin-top: -18px;
-}
-
-.character > img {
-  max-height: 100px;
-  grid-area: image;
-}
-
 #searchBar {
   width: 100%;
   height: 32px;
@@ -432,36 +389,6 @@ flex-direction: row;
   display: flex;
   flex-direction: column;
   gap: .25rem;
-}
-
-input {
-  font-size: 1rem;
-}
-
-.user-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: .25rem;
-  margin-top: 1rem;
-}
-
-.card {
-  border: 1px solid black;
-  background-color: white;
-  padding: .5rem;
-}
-
-.card > .header {
-  margin-bottom: .25rem;
-}
-
-.card > .body {
-  font-size: .8rem;
-  color: #777;
-}
-
-.hide {
-  display: none;
 }
 
 .submit {

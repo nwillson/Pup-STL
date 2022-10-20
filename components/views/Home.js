@@ -35,7 +35,6 @@ ${state.locations.map(location => {
          </tr>`;
 })}
 
-
         <!-- Prodcuts from javascript file in here. -->
       </tbody>
     </table>
