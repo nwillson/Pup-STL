@@ -63,7 +63,14 @@ function afterRender(state) {
 }
 
 //SEARCH BAR IMPLEMENTATION BELOW
-
+function getWeatherData() {
+  return axios.get(
+    `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
+  );
+}
+function getLocationData() {
+  return axios.get(`https://pup-stl.herokuapp.com/locations`);
+}
 router.hooks({
   before: (done, params) => {
     const view =
@@ -72,78 +79,31 @@ router.hooks({
         : "Home";
     switch (view) {
       case "Home":
-        axios
-          .get(
-            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
-          )
-          .then(response => {
-            const kelvinToFahrenheit = kelvinTemp =>
-              Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+        Promise.all([getWeatherData(), getLocationData()]).then(response => {
+          // Weather Response
+          console.log(response);
+          const kelvinToFahrenheit = kelvinTemp =>
+            Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+          const weatherResponse = response[0];
+          const locationResponse = response[1];
+          store.Header.weather = {};
+          store.Header.weather.city = weatherResponse.data.name;
+          store.Header.weather.temp = kelvinToFahrenheit(
+            weatherResponse.data.main.temp
+          );
+          store.Header.weather.feelsLike = kelvinToFahrenheit(
+            weatherResponse.data.main.feels_like
+          );
+          store.Header.weather.description =
+            weatherResponse.data.weather[0].main;
 
-            store.Header.weather = {};
-            store.Header.weather.city = response.data.name;
-            store.Header.weather.temp = kelvinToFahrenheit(
-              response.data.main.temp
-            );
-            store.Header.weather.feelsLike = kelvinToFahrenheit(
-              response.data.main.feels_like
-            );
-            store.Header.weather.description = response.data.weather[0].main;
+          console.log(weatherResponse.data);
 
-            console.log(response.data);
-            done();
-          })
-          .catch(err => console.log(err));
-
-        // Add a switch case statement to handle multiple routes
-
-        //add axios call HERE
-
-        axios
-          .get(`https://pup-stl.herokuapp.com/locations`)
-
-          .then(response => {
-            store.Home.locations = response.data;
-            console.log(store.Home.locations);
-            /*
-            const userCardTemplate = document.querySelector(
-              "[data-user-template]"
-            );
-            const userCardContainer = document.querySelector(
-              "[data-user-cards-container]"
-            );
-            const searchInput = document.querySelector("[data-search]");
-
-            let users = [];
-
-            searchInput.addEventListener("input", e => {
-              const value = e.target.value.toLowerCase();
-              users.forEach(user => {
-                const isVisible =
-                  user.name.toLowerCase().includes(value) ||
-                  user.email.toLowerCase().includes(value);
-                user.element.classList.toggle("hide", !isVisible);
-              });
-            });
-
-            response.data.map(user => {
-              const card = userCardTemplate.content.cloneNode(true).children[0];
-              const header = card.querySelector("[data-header]");
-              const body = card.querySelector("[data-body]");
-              header.textContent = user.name;
-              body.textContent = "Safety Rating: " + user.safetyRating;
-              userCardContainer.append(card);
-              return {
-                name: user.name,
-                safetyRating: user.safetyRating,
-                element: card
-              };
-            });
-            */
-            done();
-          });
-
-        // eslint-disable-next-line prettier/prettier
+          // Location Response
+          store.Home.locations = locationResponse.data;
+          console.log(store.Home.locations);
+          done();
+        });
 
         break;
       default:
@@ -200,3 +160,39 @@ fetch("https://jsonplaceholder.typicode.com/users")
     });
   });
   */
+
+/*
+            const userCardTemplate = document.querySelector(
+              "[data-user-template]"
+            );
+            const userCardContainer = document.querySelector(
+              "[data-user-cards-container]"
+            );
+            const searchInput = document.querySelector("[data-search]");
+
+            let users = [];
+
+            searchInput.addEventListener("input", e => {
+              const value = e.target.value.toLowerCase();
+              users.forEach(user => {
+                const isVisible =
+                  user.name.toLowerCase().includes(value) ||
+                  user.email.toLowerCase().includes(value);
+                user.element.classList.toggle("hide", !isVisible);
+              });
+            });
+
+            response.data.map(user => {
+              const card = userCardTemplate.content.cloneNode(true).children[0];
+              const header = card.querySelector("[data-header]");
+              const body = card.querySelector("[data-body]");
+              header.textContent = user.name;
+              body.textContent = "Safety Rating: " + user.safetyRating;
+              userCardContainer.append(card);
+              return {
+                name: user.name,
+                safetyRating: user.safetyRating,
+                element: card
+              };
+            });
+            */
