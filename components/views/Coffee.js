@@ -2,6 +2,8 @@ import html from "html-literal";
 
 export default state => html`
   <section id="Coffee">
+
+  <div class="topPicks"><h1>St. Louis Dog-Friendly Coffee Shops</h1></div>
     <div class="introToPage">
       <h3>
         If you ask us, there's no two better things than coffee and dogs. Use
@@ -13,15 +15,17 @@ export default state => html`
     </div>
     <div class="topPicks"><h1>Our Top Picks</h1></div>
     <div class="coffeeSpots">
-      <div class="locationHeader"><h1>Protagonist Cafe</h1></div>
+      <div class="gatedDogParkHeader"><h1>Protagonist Cafe</h1></div>
 
-      <div class="picBlock">
+      <div class = "blockHeader"><div class="picBlockCoffee1">
         <img src="https://i.ibb.co/ZmrRz5V/protagonistcafe1.jpg" />
 
         <img src="https://i.ibb.co/q9Tm3y9/protagonistcafe3.jpg" />
 
         <img src="https://i.ibb.co/nwdt3QD/protagonistcafe2.jpg" />
-      </div>
+      </div></div>
+
+
 
       <div class="facts">
         <h2>More information on Protagonist Cafe</h2>
@@ -32,14 +36,16 @@ export default state => html`
         <a href="https://www.protagonistcafe.com/">here.</a>
       </div>
 
-      <div class="fiddleHeader"><h1>Fiddlehead Fern Cafe</h1></div>
-      <div class="picBlock">
+      <div class="gatedDogParkHeader"><h1>Fiddlehead Fern Cafe</h1></div>
+
+      <div class ="blockHeader"><div class="picBlockCoffee">
         <img src="https://i.ibb.co/H7ZPW06/fiddlehead1.jpg" />
 
         <img src="https://i.ibb.co/L12wWcW/fiddlehead2.jpg" />
 
         <img src="https://i.ibb.co/WP65sJV/fiddlehead3.jpg" />
-      </div>
+      </div></div>
+
 
       <div class="facts">
         <h1>More Information on Fiddlehead Fern Cafe</h1>
@@ -52,15 +58,16 @@ export default state => html`
         <a href="https://www.fiddleheadferncafe.com/">here.</a>
       </div>
 
-      <div class="zoomieHeader"><h1>Zoomies Pet Cafe</h1></div>
+      <div class="gatedDogParkHeader"><h1>Zoomies Pet Cafe</h1></div>
 
-      <div class="picBlock">
+      <div class = "blockHeader"><div class="picBlockCoffee">
         <img src="https://i.ibb.co/v4vs02M/zoomies1.jpg" />
 
         <img src="https://i.ibb.co/17NFSpr/zoomies2.jpg" />
 
         <img src="https://i.ibb.co/S3vgPmX/zoomies3.jpg" />
-      </div>
+      </div></div>
+
 
       <div class="facts">
         <h1>More Information on Zoomies Pet Cafe</h1>
@@ -71,7 +78,8 @@ export default state => html`
         <a href="https://www.zoomiespetcafe.com/">here</a>
       </div>
     </div>
-    <div class="crime"><h1>Crime</h1></div>
+    <div class="crime"><h1>All Coffee Spots</h1></div>
+
 
     <div class = "tableList"><table style= "margin-left: auto; margin-right: auto;" >
 
@@ -85,21 +93,20 @@ export default state => html`
         <tr>
           <th>Location Name:</th>
           <th>Type of Establishment:</th>
+          <th>Neighborhood</th>
           <th>Safety Rating:</th>
         </tr>
       </thead>
       <tbody id="data-output">
-${state.locations.filter(function(location) {
-  if (location.type == "Coffee") {
-    return `<tr>
+${state.locations.map(location => {
+  return `<tr>
             <td>${location.name}</td>
             <td>${location.type}</td>
+            <td>${location.neighborhood}</td>
             <td>${location.safetyRating}</td>
          </tr>`;
-  }
-})};
+})}
 
-        <!-- Prodcuts from javascript file in here. -->
       </tbody>
     </table>
 

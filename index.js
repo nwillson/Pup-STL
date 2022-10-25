@@ -22,47 +22,15 @@ function render(state = store.Home) {
 }
 
 function afterRender(state) {
-  /*
-  below are eventlisteners that work, but
-  I would like an alternative to the alert box that does not make you click "OK"
-
-
-  document
-    .querySelector(".publicParks")
-    .addEventListener("mouseover", function() {
-      alert("Take that Dog for a stroll!");
-    });
-  document
-    .querySelector(".gatedDogParks")
-    .addEventListener("mouseover", function() {
-      alert("Let them have some fun!");
-    });
-  document
-    .querySelector(".restaurantsBars")
-    .addEventListener("mouseover", function() {
-      alert("Does your dog get a drink, too?");
-    });
-  document.querySelector(".coffee").addEventListener("mouseover", function() {
-    alert("Feed that addiction!");
+  /* document.querySelector(".dynamicTable").addEventListener("submit", event => {
+    axios.get(`https://pup-stl.herokuapp.com/locations`);
+    if (event) {
+      .then(event)
+    }
   });
-*/
-  //below is a new set of event listeners intended to change the color of the buttons on the click
-  //Public Parks works in an unintended way, but the rest do not work at all.
-  /*
-  const button = document.querySelector(
-    ".publicParks",
-    ".gatedDogParks",
-    ".restaurantsBars",
-    ".coffee"
-  );
-
-  button.addEventListener("click", function onClick() {
-    button.style.backgroundColor = "salmon";
-  });
-*/
+  */
 }
 
-//SEARCH BAR IMPLEMENTATION BELOW
 function getWeatherData() {
   return axios.get(
     `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
@@ -102,6 +70,47 @@ router.hooks({
           // Location Response
           store.Home.locations = locationResponse.data;
           console.log(store.Home.locations);
+
+          done();
+        });
+
+        break;
+
+      case "Coffee":
+        getLocationData().then(locationResponse => {
+          store.Coffee.locations = locationResponse.data.filter(
+            location => location.type === "Coffee"
+          );
+          done();
+        });
+
+        break;
+
+      case "Publicparks":
+        getLocationData().then(locationResponse => {
+          store.Publicparks.locations = locationResponse.data.filter(
+            location => location.type === "Public Park"
+          );
+          done();
+        });
+
+        break;
+
+      case "Gateddogparks":
+        getLocationData().then(locationResponse => {
+          store.Gateddogparks.locations = locationResponse.data.filter(
+            location => location.type === "Gated Dog Park"
+          );
+          done();
+        });
+
+        break;
+
+      case "Restaurantsbars":
+        getLocationData().then(locationResponse => {
+          store.Restaurantsbars.locations = locationResponse.data.filter(
+            location => location.type === "Restaurants/Bars"
+          );
           done();
         });
 

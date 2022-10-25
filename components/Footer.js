@@ -5,7 +5,7 @@ export default () => html`
     <div class="explanation">
       <h3>
         Pup-STL Allows You to Discover Dog-Friendly Locations in St. Louis City,
-        Ranked by Average Review Rating, Safety, and Location
+        Along With a Data-Driven Safety Rating
       </h3>
     </div>
   </footer>

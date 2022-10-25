@@ -23,6 +23,7 @@ export default state => html`
         <tr>
           <th>Location Name:</th>
           <th>Type of Establishment:</th>
+          <th>Neighborhood</th>
           <th>Safety Rating:</th>
         </tr>
       </thead>
@@ -31,11 +32,11 @@ ${state.locations.map(location => {
   return `<tr>
             <td>${location.name}</td>
             <td>${location.type}</td>
+            <td>${location.neighborhood}</td>
             <td>${location.safetyRating}</td>
          </tr>`;
 })}
 
-        <!-- Prodcuts from javascript file in here. -->
       </tbody>
     </table>
 
@@ -48,5 +49,5 @@ ${state.locations.map(location => {
   <div class="crimeMap">
 <a href ="https://www.neighborhoodscout.com/mo/st-louis/crime"><h2>A Visual St. Louis City Crime Map</h2></a>
 
-<iframe src = "https://federalcos.com/blog/st-louis-mo-crime-rate/" width= 800px; height= 800px;></iframe>
+<iframe src = "https://federalcos.com/blog/safest-neighborhoods-in-st-louis-mo/" width= 800px; height= 800px;></iframe>
 `;

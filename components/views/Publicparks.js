@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default () => html`
+export default state => html`
   <section id="Publicparks">
 
   <div class="topPicks"><h1>St. Louis Public Parks</h1></div>
@@ -20,14 +20,17 @@ and so many others. Only 3 of these made the cut of being Our Top Picks.</div></
 
 <div class="topPicks"><h1>Our Top Picks</h1></div>
 
-<div class = "publicParksHeader"><h1>Forest Park</h1></div>
-<div class = "picBlock"><div class ="allForestPark">
-  <img class="forestPark" src="https://i.ibb.co/ZhQQXyn/Forest-Park-1.jpg" />
-<img class="forestPark" src="https://i.ibb.co/tDtCKp8/Forest-Park-2.jpg" />
-<img class="forestPark" src="https://i.ibb.co/Y3nVJdK/Forest-Park-3.jpg" />
-<img class="forestPark" src="https://i.ibb.co/37XMhY3/Forest-Park-4.jpg" />
-<img class="forestPark" src="https://i.ibb.co/3cbjZHQ/Forest-Park-5.jpg" />
-</div></div>
+<div class = "gatedDogParkHeader"><h1>Forest Park</h1></div>
+
+<div class = "blockHeader"><div class ="picBlock">
+<img class = "towerGrove" src="https://i.ibb.co/ZhQQXyn/Forest-Park-1.jpg" />
+<img class = "towerGrove" src="https://i.ibb.co/tDtCKp8/Forest-Park-2.jpg" />
+<img class = "towerGrove" src="https://i.ibb.co/Y3nVJdK/Forest-Park-3.jpg" />
+<img class = "towerGrove" src="https://i.ibb.co/37XMhY3/Forest-Park-4.jpg" />
+<img class = "towerGrove" src="https://i.ibb.co/3cbjZHQ/Forest-Park-5.jpg" /></div></div>
+
+
+
 
 
 <div class ="facts">
@@ -39,9 +42,9 @@ and so many others. Only 3 of these made the cut of being Our Top Picks.</div></
 </div>
 
 
-<div class = "publicParksHeader"><h1>Tower Grove Park</h1></div>
+<div class = "gatedDogParkHeader"><h1>Tower Grove Park</h1></div>
 
-<div class ="picBlock"><div class = "towerGrovePics">
+<div class = "blockHeader"><div class ="picBlock">
   <img class="towerGrove" src="https://i.ibb.co/n8D4y9V/Tower-Grove-1.jpg" />
 <img class="towerGrove" src="https://i.ibb.co/Btg7KjG/Tower-Grove-2.jpg" />
 <img class="towerGrove" src="https://i.ibb.co/dk5Z0Pg/Tower-Grove-3.jpg" />
@@ -50,11 +53,21 @@ and so many others. Only 3 of these made the cut of being Our Top Picks.</div></
 
 
 
+
 <div class = "facts"><h1>More Information on Tower Grove</h1>Tower Grove Park features 32 of mostly Victorian Era design.
  It has a lily pond, over 400 species of plants, and is a well known bird-watching (or squirrel watching) spot for you and your pup.
  More pictures and information can be found <a href = "https://www.towergrovepark.org/">here.</a></div>
 
-<div class = "publicParksHeader"><h1>Francis Park</h1></div>
+<div class = "gatedDogParkHeader"><h1>Francis Park</h1></div>
+
+
+<div class = "blockHeader"><div class ="picBlock">
+  <img class="towerGrove" src="https://i.ibb.co/Q6h99gc/francis1.jpg" />
+<img class="towerGrove" src="https://i.ibb.co/5WhJrfx/francis2.jpg" />
+<img class="towerGrove" src="https://i.ibb.co/LzTK34D/francis3.jpg" />
+<img class="towerGrove" src="https://i.ibb.co/09gHZQp/francis4.jpg" />
+<img class="towerGrove" src="https://i.ibb.co/PWRrLq1/francis5.jpg" /></div></div>
+
 
 
 </section></div>
@@ -65,5 +78,38 @@ The perfect chill spot for you and your pup. More information can be found
 <a href = "https://www.stlouis-mo.gov/parks/parks/browse-parks/view-park.cfm?parkID=3&parkName=Francis+Park">here.</a>
 </div>
 
-  <div class="crime"><h1>Crime</h1></div>
+  <div class="crime"><h1>All Public Parks</h1></div>
+  <div class = "tableList"><table style= "margin-left: auto; margin-right: auto;" >
+
+</table>
+
+</div>
+
+<div class="dynamicTable">
+    <table>
+      <thead>
+        <tr>
+          <th>Location Name:</th>
+          <th>Type of Establishment:</th>
+          <th>Neighborhood</th>
+          <th>Safety Rating:</th>
+        </tr>
+      </thead>
+      <tbody id="data-output">
+${state.locations.map(location => {
+  return `<tr>
+            <td>${location.name}</td>
+            <td>${location.type}</td>
+            <td>${location.neighborhood}</td>
+            <td>${location.safetyRating}</td>
+         </tr>`;
+})}
+
+      </tbody>
+    </table>
+
+
+
+  </div>
+</div>
 `;
