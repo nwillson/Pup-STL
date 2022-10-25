@@ -59,7 +59,9 @@ export default state => html`
         <h2>More Information on Rockwell Beer Garden</h2>
         Rockwell Beer Garden is located in Southwest St. Louis, in the "St.
         Louis Hills". It is in an extremely safe neighborhood, and in the heart
-        of an extraordinary park. Rockwell Beer Garden serves their own beer,
+        of an extraordinary park.
+        <br>
+        They serve their own beer,
         pizza, mixed drinks, coffee, and more. More information can be found
         <a href="https://rockwellbeer.com/francis-park/">here.</a>
       </div>
@@ -90,7 +92,7 @@ export default state => html`
       </div>
     </div>
   </section>
-  <div class="crime"><h1>All Restaurants</h1></div>
+  <div class="topPicks"><h1>All Restaurants</h1></div>
   <div class = "tableList"><table style= "margin-left: auto; margin-right: auto;" >
 
 </table>

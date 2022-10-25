@@ -22,13 +22,16 @@ function render(state = store.Home) {
 }
 
 function afterRender(state) {
-  /* document.querySelector(".dynamicTable").addEventListener("submit", event => {
-    axios.get(`https://pup-stl.herokuapp.com/locations`);
+  document.querySelector(".homeSearch").addEventListener("submit", event => {
+    let searchLocations = axios.get(`https://pup-stl.herokuapp.com/locations`);
     if (event) {
-      .then(event)
+      getLocationData().then(locationResponse => {
+        store.Home.locations = locationResponse.data.filter(
+          location => location.name === event
+        );
+      });
     }
   });
-  */
 }
 
 function getWeatherData() {

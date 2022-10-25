@@ -54,9 +54,11 @@ and so many others. Only 3 of these made the cut of being Our Top Picks.</div></
 
 
 
-<div class = "facts"><h1>More Information on Tower Grove</h1>Tower Grove Park features 32 of mostly Victorian Era design.
- It has a lily pond, over 400 species of plants, and is a well known bird-watching (or squirrel watching) spot for you and your pup.
- More pictures and information can be found <a href = "https://www.towergrovepark.org/">here.</a></div>
+<div class = "facts"><h1>More Information on Tower Grove</h1>
+<li>Tower Grove Park features 32 of mostly Victorian Era design.</li> <br>
+ <li>It has a lily pond, over 400 species of plants, and is a well known bird-watching (or squirrel watching) spot for you and your pup.</li>
+ <br>
+ <li>More pictures and information can be found <a href = "https://www.towergrovepark.org/">here.</a></div></li>
 
 <div class = "gatedDogParkHeader"><h1>Francis Park</h1></div>
 
@@ -72,13 +74,19 @@ and so many others. Only 3 of these made the cut of being Our Top Picks.</div></
 
 </section></div>
 
-<div class = "facts"><center><h2>More Information on Francis Park</h2></center>This park holds inside of it a brewery,
-(dog friendly, listed on our Restaurants/Bars page), tennis courts, multiple fields, paths, and a total 60 acres of land.
-The perfect chill spot for you and your pup. More information can be found
+<div class = "facts"><center><h2>More Information on Francis Park</h2></center>
+This park holds: <br>
+<li>A Brewery (dog friendly, listed on our Restaurants/Bars page)</li>
+<li>Tennis Courts</li>
+<li>Multiple Fields</li>
+<li>Pathways</li>
+<li>60 Acres of Land</li>
+
+More information can be found
 <a href = "https://www.stlouis-mo.gov/parks/parks/browse-parks/view-park.cfm?parkID=3&parkName=Francis+Park">here.</a>
 </div>
 
-  <div class="crime"><h1>All Public Parks</h1></div>
+  <div class="topPicks"><h1>All Public Parks</h1></div>
   <div class = "tableList"><table style= "margin-left: auto; margin-right: auto;" >
 
 </table>

@@ -18,11 +18,17 @@ export default state => html`
       <div class="gatedDogParkHeader"><h1>Protagonist Cafe</h1></div>
 
       <div class = "blockHeader"><div class="picBlockCoffee1">
+
+        <img src="https://i.ibb.co/nwdt3QD/protagonistcafe2.jpg" />
+
         <img src="https://i.ibb.co/ZmrRz5V/protagonistcafe1.jpg" />
 
         <img src="https://i.ibb.co/q9Tm3y9/protagonistcafe3.jpg" />
 
-        <img src="https://i.ibb.co/nwdt3QD/protagonistcafe2.jpg" />
+        <img src="https://i.ibb.co/bHY4g4p/protagonistcafe5.jpg" />
+
+        <img src="https://i.ibb.co/qkM8gJ3/protagonistcafe4.jpg" />
+
       </div></div>
 
 
@@ -39,12 +45,20 @@ export default state => html`
       <div class="gatedDogParkHeader"><h1>Fiddlehead Fern Cafe</h1></div>
 
       <div class ="blockHeader"><div class="picBlockCoffee">
-        <img src="https://i.ibb.co/H7ZPW06/fiddlehead1.jpg" />
+
+
 
         <img src="https://i.ibb.co/L12wWcW/fiddlehead2.jpg" />
 
         <img src="https://i.ibb.co/WP65sJV/fiddlehead3.jpg" />
+        <img src="https://i.ibb.co/H7ZPW06/fiddlehead1.jpg" />
+
+
+      <img src="https://i.ibb.co/7g81DQp/fiddlehead5.jpg" />
+
+      <img src="https://i.ibb.co/swTB1QM/fiddlehead4.jpg" />
       </div></div>
+
 
 
       <div class="facts">
@@ -60,12 +74,18 @@ export default state => html`
 
       <div class="gatedDogParkHeader"><h1>Zoomies Pet Cafe</h1></div>
 
-      <div class = "blockHeader"><div class="picBlockCoffee">
+      <div class = "blockHeader"><div class="picBlockZoomies">
         <img src="https://i.ibb.co/v4vs02M/zoomies1.jpg" />
 
         <img src="https://i.ibb.co/17NFSpr/zoomies2.jpg" />
 
+        <img src="https://i.ibb.co/bdqss79/zoomies5.jpg" />
+
         <img src="https://i.ibb.co/S3vgPmX/zoomies3.jpg" />
+
+        <img src="https://i.ibb.co/V3Ff23m/zoomies6.jpg" />
+
+
       </div></div>
 
 
@@ -74,11 +94,13 @@ export default state => html`
 
         It's in the name! Zoomies Pet Cafe is located in Princeton Heights.
         Princeton Heights is one of the safest Neighborhoods in St. Louis with a
-        Safety Rating of 9. This place is centered around your pups! Link
+        Safety Rating of 9.
+        <br>
+        This place is centered around your pups! Link
         <a href="https://www.zoomiespetcafe.com/">here</a>
       </div>
     </div>
-    <div class="crime"><h1>All Coffee Spots</h1></div>
+    <div class="topPicks"><h1>All Coffee Spots</h1></div>
 
 
     <div class = "tableList"><table style= "margin-left: auto; margin-right: auto;" >

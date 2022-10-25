@@ -97,7 +97,7 @@ export default state => html`
       </div>
     </div>
   </section>
-  <div class="crime"><h1>All Gated Dog Parks</h1></div>
+  <div class="topPicks"><h1>All Gated Dog Parks</h1></div>
   <div class = "tableList"><table style= "margin-left: auto; margin-right: auto;" >
 
 </table>

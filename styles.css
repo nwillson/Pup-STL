@@ -31,8 +31,6 @@ img[src^= "https://i.ibb.co/Nthpwm1/logo-1.png"] {
   background-position: center;
   background-attachment: absolute;
   margin: 0 auto;
-
-
 }
 
 .search {
@@ -44,15 +42,6 @@ img[src^= "https://i.ibb.co/Nthpwm1/logo-1.png"] {
   font-family: cinzel;
   margin-top: 25px;
   margin-left: 500px;
-}
-
-.search input {
-  width: 400px;
-  height: 30px;
-  font-size: 22px;
-  display: flex;
-  justify-content: center;
-  margin-right: 500px;
 }
 
 .stockPhotos {
@@ -98,8 +87,6 @@ flex-direction: row;
     color: white;
     margin: 0 auto;
 }
-
-
 
 .nav-links {
   margin-top: 100px;
@@ -173,28 +160,8 @@ flex-direction: row;
     margin: 0 auto;
 }
 
-.crime {
-  text-align: center;
-  font-family: cinzel;
-  display: block;
-  text-align: center;
-    height: 60px;
-    width: 700px;
-    line-height: 60px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    background-color: #00244c;
-    background-position: center;
-    color: white;
-    margin: 0 auto;
-}
-
 .crimeMap {
   text-align: center;
-}
-
-.allForestPark {
-  margin-left: 3.75%;
 }
 
 .introToPage {
@@ -208,13 +175,8 @@ flex-direction: row;
   margin: 0 auto;
   margin-top: 50px;
   list-style-type: none;
-
 }
 
-.forestPark {
-  margin-top: 2%;
-  width: 19%;
-}
 
 .rbPics {
   margin-top: 2%;
@@ -227,41 +189,10 @@ flex-direction: row;
   width: 19%;
 }
 
-.francisPark {
-  width: 19%;
-  height: 160px;
-}
-
-.francisParkBig {
-  margin-top: 40px;
-  width: 17%;
-}
-
 .topPicksInfo {
   text-align: center;
 }
 
-.stJohns {
-  margin-top: 2%;
-  width: 19%;
-}
-
-/*
-.shawPics {
-  margin-left: 2%;
-  margin-top: 2%;
-  width: 17%;
-  height: 160px;
-}
-*/
-/*
-.shawPics1 {
-  height: 160px;
-  width: 17%;
-  margin-left: 3.7%;
-  margin-right: 1%;
-}
-*/
 .facts {
   text-align: center;
   margin-top: 100px;
@@ -318,6 +249,7 @@ flex-direction: row;
 }
 
 .picBlock {
+  margin-left: 2%;
   margin-top: 25px;
     display: flex;
     flex-direction: row;
@@ -329,6 +261,18 @@ flex-direction: row;
 }
 
 .picBlockCoffee {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  height: 200px;
+  width: 200vh;
+  overflow: hidden;
+}
+
+.picBlockZoomies {
+  margin-left: 2%;
   margin-top: 25px;
   display: flex;
   flex-direction: row;
@@ -372,23 +316,6 @@ flex-direction: row;
   font-size: 12px;
 }
 
-#searchWrapper {
-  position: relative;
-}
-
-#searchWrapper::after {
-  content: '🔍';
-  position: absolute;
-  top: 7px;
-  right: 15px;
-}
-
-.search-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: .25rem;
-}
-
 .submit {
   text-align: center;
   font-family: cinzel;
@@ -412,17 +339,6 @@ margin-left: auto;
 margin-right: auto;
 }
 
-/*
-TRYING TO CENTER, WON'T WORK
-
-.dynamicTable {
-  text-align:center;
-  display:block;
-  background-position: center;
-  margin: 0 auto;
-  color: blue;
- }
-*/
 th {
 text-align: center;
 
@@ -458,10 +374,6 @@ width: 300px;
   height: 800px;
  }
 
- .singlePics {
-
- }
-
  .gatedDogParkHeader {
   font-family: cinzel;
   display: block;
@@ -483,10 +395,6 @@ width: 300px;
   margin-right: 2px;
   margin-left:2px;
   text-align:center;
- }
-
- .search-wrapper {
-  margin-top: 50px;
  }
 
 .blockHeader {
