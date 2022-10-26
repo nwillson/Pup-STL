@@ -17,22 +17,34 @@ export default state => html`
 
   <div class="topPicks"><h1>Our Top Picks</h1></div>
   <section id="Gateddogparks">
-    <div class="gatedDogParkHeader"><h1>Southwest City Dog Park</h1></div>
+
+
+
+    <div class="gatedDogParkHeader">
+      <h1>SLU Dog Park and Sculpture Garden</h1>
+    </div>
 
     <div class="blockHeader">
       <div class="picBlock">
-        <img class = "towerGrove" src="https://i.ibb.co/RHCZ0v0/swdog1.jpg" />
-        <img class = "towerGrove" src="https://i.ibb.co/Lg9J3TB/swdog2.jpg" />
-        <img class = "towerGrove" src="https://i.ibb.co/4MLMCyk/swdog3.jpg" />
+        <img class = "towerGrove" src="https://i.ibb.co/hXMPWsj/slu2.jpg" />
+        <img class = "towerGrove" src="https://i.ibb.co/S0tvRSc/slu3.jpg" />
+        <img class = "towerGrove" src="https://i.ibb.co/QHz2sXV/slu1.jpg" />
+        <img class = "towerGrove" src="https://i.ibb.co/ZGpLdWD/slu4.jpg" />
+        <img class = "towerGrove" src="https://i.ibb.co/ZxZPtk8/slu5.jpg" />
       </div>
     </div>
 
     <div class="facts">
       <div class="factsText">
-        <h2>More Information on Southwest City Dog Park:</h2>
-        Southwest City Dog Park is great! It is very popular, so it is currently
-        no longer accepting any applications, but a wait list is in order
-        <a href="https://swcitydogpark.org/">here.</a>
+        <h2>More Information on SLU Dog Park</h2>
+        SLU Dog Park and Sculpture Garden is located near Saint Louis University
+        on Grand. We picked this location because of the beautiful architecture
+        and college-town-like scenery. It is surely an amazing spot. This is one
+        of the only open-to-all dog parks in the city. More information
+        <a
+          href="https://onthegrid.city/st-louis/midtown-the-grove/slu-dog-park-sculpture-garden"
+          >here</a
+        >
       </div>
     </div>
 
@@ -69,33 +81,24 @@ export default state => html`
       </div>
     </div>
 
-    <div class="gatedDogParkHeader">
-      <h1>SLU Dog Park and Sculpture Garden</h1>
-    </div>
+    <div class="gatedDogParkHeader"><h1>Southwest City Dog Park</h1></div>
 
-    <div class="blockHeader">
-      <div class="picBlock">
-        <img class = "towerGrove" src="https://i.ibb.co/hXMPWsj/slu2.jpg" />
-        <img class = "towerGrove" src="https://i.ibb.co/S0tvRSc/slu3.jpg" />
-        <img class = "towerGrove" src="https://i.ibb.co/QHz2sXV/slu1.jpg" />
-        <img class = "towerGrove" src="https://i.ibb.co/ZGpLdWD/slu4.jpg" />
-        <img class = "towerGrove" src="https://i.ibb.co/ZxZPtk8/slu5.jpg" />
-      </div>
-    </div>
+<div class="blockHeader">
+  <div class="picBlock">
+    <img class = "towerGrove" src="https://i.ibb.co/RHCZ0v0/swdog1.jpg" />
+    <img class = "towerGrove" src="https://i.ibb.co/Lg9J3TB/swdog2.jpg" />
+    <img class = "towerGrove" src="https://i.ibb.co/4MLMCyk/swdog3.jpg" />
+  </div>
+</div>
 
-    <div class="facts">
-      <div class="factsText">
-        <h2>More Information on SLU Dog Park</h2>
-        SLU Dog Park and Sculpture Garden is located near Saint Louis University
-        on Grand. We picked this location because of the beautiful architecture
-        and college-town-like scenery. It is surely an amazing spot. This is one
-        of the only open-to-all dog parks in the city. More information
-        <a
-          href="https://onthegrid.city/st-louis/midtown-the-grove/slu-dog-park-sculpture-garden"
-          >here</a
-        >
-      </div>
-    </div>
+<div class="facts">
+  <div class="factsText">
+    <h2>More Information on Southwest City Dog Park:</h2>
+    Southwest City Dog Park is great! It is very popular, so it is currently
+    no longer accepting any applications, but a wait list is in order
+    <a href="https://swcitydogpark.org/">here.</a>
+  </div>
+</div>
   </section>
   <div class="topPicks"><h1>All Gated Dog Parks</h1></div>
   <div class = "tableList"><table style= "margin-left: auto; margin-right: auto;" >
