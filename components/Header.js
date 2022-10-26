@@ -15,7 +15,7 @@ export default state => html`
 
     <h1>
       <div class = "appName">
-      <center>Pup STL</center>
+      <center>Pup-STL</center>
     </h1></div>
 
     <div class = "logo"></div>
