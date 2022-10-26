@@ -1,4 +1,5 @@
 export default {
   header: "Coffee",
-  view: "Coffee"
+  view: "Coffee",
+  locations: []
 };

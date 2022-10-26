@@ -4,5 +4,5 @@ export default [
   { title: "Gateddogparks", text: "Gated Dog Parks" },
   { title: "Restaurantsbars", text: "Restaurants and Bars" },
   { title: "Coffee", text: "Coffee" },
-  { title: "Submission", text: "Make a Submission" }
+  { title: "Submission", text: "More" }
 ];

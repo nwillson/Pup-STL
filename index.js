@@ -4,6 +4,7 @@ import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
 import dotenv from "dotenv";
+dotenv.config();
 
 const router = new Navigo("/");
 
@@ -21,47 +22,31 @@ function render(state = store.Home) {
 }
 
 function afterRender(state) {
-  /*
-  below are eventlisteners that work, but
-  I would like an alternative to the alert box that does not make you click "OK"
-
-
-  document
-    .querySelector(".publicParks")
-    .addEventListener("mouseover", function() {
-      alert("Take that Dog for a stroll!");
-    });
-  document
-    .querySelector(".gatedDogParks")
-    .addEventListener("mouseover", function() {
-      alert("Let them have some fun!");
-    });
-  document
-    .querySelector(".restaurantsBars")
-    .addEventListener("mouseover", function() {
-      alert("Does your dog get a drink, too?");
-    });
-  document.querySelector(".coffee").addEventListener("mouseover", function() {
-    alert("Feed that addiction!");
-  });
-*/
-  //below is a new set of event listeners intended to change the color of the buttons on the click
-  //Public Parks works in an unintended way, but the rest do not work at all.
-
-  const button = document.querySelector(
-    ".publicParks",
-    ".gatedDogParks",
-    ".restaurantsBars",
-    ".coffee"
-  );
-
-  button.addEventListener("click", function onClick() {
-    button.style.backgroundColor = "salmon";
-  });
+  if (state.view === "Home") {
+    document
+      .querySelector(".homeSearch")
+      .addEventListener("submit", async event => {
+        const inputSearch = event.target.elements;
+        console.log("Input Element List", inputSearch);
+        const searchValue = inputSearch.query.value;
+        console.log("CONSOLE SEARCH VALUE: ", searchValue);
+        /*
+        axios
+          .get(`https://pup-stl.herokuapp.com/locations`)
+          .then(response => {});
+          */
+      });
+  }
 }
 
-//SEARCH BAR IMPLEMENTATION BELOW
-
+function getWeatherData() {
+  return axios.get(
+    `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
+  );
+}
+function getLocationData() {
+  return axios.get(`https://pup-stl.herokuapp.com/locations`);
+}
 router.hooks({
   before: (done, params) => {
     const view =
@@ -70,109 +55,85 @@ router.hooks({
         : "Home";
     switch (view) {
       case "Home":
-        axios
-          .get(
-            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
-          )
-          .then(response => {
-            const kelvinToFahrenheit = kelvinTemp =>
-              Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+        Promise.all([getWeatherData(), getLocationData()]).then(response => {
+          // Weather Response
+          console.log(response);
+          const kelvinToFahrenheit = kelvinTemp =>
+            Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+          const weatherResponse = response[0];
+          const locationResponse = response[1];
+          store.Header.weather = {};
+          store.Header.weather.city = weatherResponse.data.name;
+          store.Header.weather.temp = kelvinToFahrenheit(
+            weatherResponse.data.main.temp
+          );
+          store.Header.weather.feelsLike = kelvinToFahrenheit(
+            weatherResponse.data.main.feels_like
+          );
+          store.Header.weather.description =
+            weatherResponse.data.weather[0].main;
 
-            store.Header.weather = {};
-            store.Header.weather.city = response.data.name;
-            store.Header.weather.temp = kelvinToFahrenheit(
-              response.data.main.temp
-            );
-            store.Header.weather.feelsLike = kelvinToFahrenheit(
-              response.data.main.feels_like
-            );
-            store.Header.weather.description = response.data.weather[0].main;
+          console.log(weatherResponse.data);
 
-            console.log(response.data);
-            done();
-          })
-          .catch(err => console.log(err));
+          // Location Response
+          store.Home.locations = locationResponse.data;
+          console.log(store.Home.locations);
 
-        // Add a switch case statement to handle multiple routes
-
-        //add axios call HERE
-
-        axios
-          .get(`https://pup-stl.herokuapp.com/locations`)
-
-          .then(response => {
-            store.Home.locations = response.data;
-            console.log(store.Home.locations);
-            /*
-            const userCardTemplate = document.querySelector(
-              "[data-user-template]"
-            );
-            const userCardContainer = document.querySelector(
-              "[data-user-cards-container]"
-            );
-            const searchInput = document.querySelector("[data-search]");
-
-            let users = [];
-
-            searchInput.addEventListener("input", e => {
-              const value = e.target.value.toLowerCase();
-              users.forEach(user => {
-                const isVisible =
-                  user.name.toLowerCase().includes(value) ||
-                  user.email.toLowerCase().includes(value);
-                user.element.classList.toggle("hide", !isVisible);
-              });
-            });
-
-            response.data.map(user => {
-              const card = userCardTemplate.content.cloneNode(true).children[0];
-              const header = card.querySelector("[data-header]");
-              const body = card.querySelector("[data-body]");
-              header.textContent = user.name;
-              body.textContent = "Safety Rating: " + user.safetyRating;
-              userCardContainer.append(card);
-              return {
-                name: user.name,
-                safetyRating: user.safetyRating,
-                element: card
-              };
-            });
-            */
-            done();
-          });
-
-        // eslint-disable-next-line prettier/prettier
-        axios.get(`https://pup-stl.herokuapp.com/locations`)
-        .then(response => {
-
-          function loopTable(users) {
-            //placeholder variable is equal to query Selector of data-output
-            let placeholder = document.querySelector("#data-output");
-            //set variable to empty string to later be filled in by loop
-            let out = "";
-
-            //adds and reassigns "out" to new variable using user.name&email
-
-            for (let user of users.data) {
-              out += `
-         <tr>
-            <td>${user.name}</td>
-            <td>${user.type}</td>
-            <td>${user.safetyRating}</td>
-         </tr>
-      `;
-            }
-            placeholder.innerHTML = out;
-          }
-
-          loopTable(response);
+          done();
         });
-        done();
+
+        break;
+
+      case "Coffee":
+        getLocationData().then(locationResponse => {
+          store.Coffee.locations = locationResponse.data.filter(
+            location => location.type === "Coffee"
+          );
+          done();
+        });
+
+        break;
+
+      case "Publicparks":
+        getLocationData().then(locationResponse => {
+          store.Publicparks.locations = locationResponse.data.filter(
+            location => location.type === "Public Park"
+          );
+          done();
+        });
+
+        break;
+
+      case "Gateddogparks":
+        getLocationData().then(locationResponse => {
+          store.Gateddogparks.locations = locationResponse.data.filter(
+            location => location.type === "Gated Dog Park"
+          );
+          done();
+        });
+
+        break;
+
+      case "Restaurantsbars":
+        getLocationData().then(locationResponse => {
+          store.Restaurantsbars.locations = locationResponse.data.filter(
+            location => location.type === "Restaurants/Bars"
+          );
+          done();
+        });
 
         break;
       default:
         done();
     }
+  },
+  already: params => {
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
+        : "Home";
+
+    render(store[view]);
   }
 });
 
@@ -216,3 +177,39 @@ fetch("https://jsonplaceholder.typicode.com/users")
     });
   });
   */
+
+/*
+            const userCardTemplate = document.querySelector(
+              "[data-user-template]"
+            );
+            const userCardContainer = document.querySelector(
+              "[data-user-cards-container]"
+            );
+            const searchInput = document.querySelector("[data-search]");
+
+            let users = [];
+
+            searchInput.addEventListener("input", e => {
+              const value = e.target.value.toLowerCase();
+              users.forEach(user => {
+                const isVisible =
+                  user.name.toLowerCase().includes(value) ||
+                  user.email.toLowerCase().includes(value);
+                user.element.classList.toggle("hide", !isVisible);
+              });
+            });
+
+            response.data.map(user => {
+              const card = userCardTemplate.content.cloneNode(true).children[0];
+              const header = card.querySelector("[data-header]");
+              const body = card.querySelector("[data-body]");
+              header.textContent = user.name;
+              body.textContent = "Safety Rating: " + user.safetyRating;
+              userCardContainer.append(card);
+              return {
+                name: user.name,
+                safetyRating: user.safetyRating,
+                element: card
+              };
+            });
+            */
