@@ -19,9 +19,12 @@ export default state => html`
 
 <div class = "homeSearch">
 <form id="search">
-  <input type="search" id="query" name="q" placeholder="Search...">
-  <button>Search</button>
+  <label for="search1"></label>
+  <input type="text" name="search1" id="search1" placeholder="Search Here..."/>
+  <input type="submit" name="submitSearch" value="search"/>
 </form>
+
+
   <div class="dynamicTable">
     <table>
       <thead>

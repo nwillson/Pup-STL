@@ -22,16 +22,21 @@ function render(state = store.Home) {
 }
 
 function afterRender(state) {
-  document.querySelector(".homeSearch").addEventListener("submit", event => {
-    let searchLocations = axios.get(`https://pup-stl.herokuapp.com/locations`);
-    if (event) {
-      getLocationData().then(locationResponse => {
-        store.Home.locations = locationResponse.data.filter(
-          location => location.name === event
-        );
+  if (state.view === "Home") {
+    document
+      .querySelector(".homeSearch")
+      .addEventListener("submit", async event => {
+        const inputSearch = event.target.elements;
+        console.log("Input Element List", inputSearch);
+        const searchValue = inputSearch.query.value;
+        console.log("CONSOLE SEARCH VALUE: ", searchValue);
+        /*
+        axios
+          .get(`https://pup-stl.herokuapp.com/locations`)
+          .then(response => {});
+          */
       });
-    }
-  });
+  }
 }
 
 function getWeatherData() {

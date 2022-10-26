@@ -6,6 +6,61 @@ html, body {
 
 }
 
+@media (min-width: 600px) {
+  .nav-links {
+    margin-top: 100px;
+    border: 4px solid gray;
+
+    width: 500px;
+    height: auto;
+    background-position: center;
+    background-color: #ffe3be;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .title {
+    font-family: cinzel;
+    display: block;
+    text-align: center;
+      height: 60px;
+      width: 400px;
+      line-height: 60px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+      background-color: #00244c;
+      background-position: center;
+      background-attachment: absolute;
+      color: white;
+      margin: 0 auto;
+  }
+
+  #where {
+    font-family: cinzel;
+    display: block;
+    text-align: center;
+      height: 60px;
+      width: 300px;
+      line-height: 60px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+      background-color: #00244c;
+      background-position: center;
+      background-attachment: absolute;
+      color: white;
+      margin: 0 auto;
+
+  }
+
+* img {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+}
+
     .title {
       width: 100%;
     }
@@ -249,7 +304,6 @@ flex-direction: row;
 }
 
 .picBlock {
-  margin-left: 2%;
   margin-top: 25px;
     display: flex;
     flex-direction: row;
