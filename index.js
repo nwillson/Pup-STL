@@ -30,11 +30,10 @@ function afterRender(state) {
         console.log("Input Element List", inputSearch);
         const searchValue = inputSearch.query.value;
         console.log("CONSOLE SEARCH VALUE: ", searchValue);
-        /*
+
         axios
           .get(`https://pup-stl.herokuapp.com/locations`)
           .then(response => {});
-          */
       });
   }
 }

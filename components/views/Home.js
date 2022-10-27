@@ -16,14 +16,14 @@ export default state => html`
 </table>
 
 </div>
-<!--
+
 <div class = "homeSearch">
 <form id="search">
   <label for="search1"></label>
   <input type="text" name="search1" id="search1" placeholder="Search Here..."/>
   <input type="submit" name="submitSearch" value="search"/>
 </form>
--->
+
 
   <div class="dynamicTable">
     <table>
@@ -53,7 +53,7 @@ ${state.locations.map(location => {
   </div>
 </div>
 
-  <div class="crime"><h1>Crime</h1></div>
+  <div class= "topPicks"><h1>Crime</h1></div>
   <div class="crimeMap">
 <a href ="https://www.neighborhoodscout.com/mo/st-louis/crime"><h2>A Visual St. Louis City Crime Map</h2></a>
 
