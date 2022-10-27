@@ -16,14 +16,14 @@ export default state => html`
 </table>
 
 </div>
-
+<!--
 <div class = "homeSearch">
 <form id="search">
   <label for="search1"></label>
   <input type="text" name="search1" id="search1" placeholder="Search Here..."/>
   <input type="submit" name="submitSearch" value="search"/>
 </form>
-
+-->
 
   <div class="dynamicTable">
     <table>

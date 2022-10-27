@@ -8,7 +8,7 @@ export default state => html`
   <div class = "weatherLogo"><img src="https://i.ibb.co/q5LPDT7/weatherlogo.webp"></div>
 
 <div class = "weatherInfo"><h3>
-  The weather in ${state.weather.city} is ${state.weather.description}.
+  ${state.weather.city} - ${state.weather.description}.
   Temperature is ${state.weather.temp}F, and it feels like
   ${state.weather.feelsLike}F.
 </h3></div></div>
