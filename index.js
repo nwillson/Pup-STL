@@ -22,6 +22,7 @@ function render(state = store.Home) {
 }
 
 function afterRender(state) {
+  /*
   if (state.view === "Home") {
     document
       .querySelector(".homeSearch")
@@ -30,13 +31,13 @@ function afterRender(state) {
         console.log("Input Element List", inputSearch);
         const searchValue = inputSearch.query.value;
         console.log("CONSOLE SEARCH VALUE: ", searchValue);
-        /*
+
         axios
           .get(`https://pup-stl.herokuapp.com/locations`)
           .then(response => {});
-          */
       });
   }
+  */
 }
 
 function getWeatherData() {
@@ -85,37 +86,120 @@ router.hooks({
         break;
 
       case "Coffee":
-        getLocationData().then(locationResponse => {
+        Promise.all([getWeatherData(), getLocationData()]).then(response => {
+          // Weather Response
+          console.log(response);
+          const kelvinToFahrenheit = kelvinTemp =>
+            Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+          const weatherResponse = response[0];
+          const locationResponse = response[1];
+          store.Header.weather = {};
+          store.Header.weather.city = weatherResponse.data.name;
+          store.Header.weather.temp = kelvinToFahrenheit(
+            weatherResponse.data.main.temp
+          );
+          store.Header.weather.feelsLike = kelvinToFahrenheit(
+            weatherResponse.data.main.feels_like
+          );
+          store.Header.weather.description =
+            weatherResponse.data.weather[0].main;
+
+          console.log(weatherResponse.data);
+
+          // Location Response
           store.Coffee.locations = locationResponse.data.filter(
             location => location.type === "Coffee"
           );
+
           done();
         });
 
         break;
 
       case "Publicparks":
-        getLocationData().then(locationResponse => {
+        Promise.all([getWeatherData(), getLocationData()]).then(response => {
+          // Weather Response
+          console.log(response);
+          const kelvinToFahrenheit = kelvinTemp =>
+            Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+          const weatherResponse = response[0];
+          const locationResponse = response[1];
+          store.Header.weather = {};
+          store.Header.weather.city = weatherResponse.data.name;
+          store.Header.weather.temp = kelvinToFahrenheit(
+            weatherResponse.data.main.temp
+          );
+          store.Header.weather.feelsLike = kelvinToFahrenheit(
+            weatherResponse.data.main.feels_like
+          );
+          store.Header.weather.description =
+            weatherResponse.data.weather[0].main;
+
+          console.log(weatherResponse.data);
+
+          // Location Response
           store.Publicparks.locations = locationResponse.data.filter(
             location => location.type === "Public Park"
           );
+
           done();
         });
 
         break;
 
       case "Gateddogparks":
-        getLocationData().then(locationResponse => {
+        Promise.all([getWeatherData(), getLocationData()]).then(response => {
+          // Weather Response
+          console.log(response);
+          const kelvinToFahrenheit = kelvinTemp =>
+            Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+          const weatherResponse = response[0];
+          const locationResponse = response[1];
+          store.Header.weather = {};
+          store.Header.weather.city = weatherResponse.data.name;
+          store.Header.weather.temp = kelvinToFahrenheit(
+            weatherResponse.data.main.temp
+          );
+          store.Header.weather.feelsLike = kelvinToFahrenheit(
+            weatherResponse.data.main.feels_like
+          );
+          store.Header.weather.description =
+            weatherResponse.data.weather[0].main;
+
+          console.log(weatherResponse.data);
+
+          // Location Response
           store.Gateddogparks.locations = locationResponse.data.filter(
             location => location.type === "Gated Dog Park"
           );
+
           done();
         });
 
         break;
 
       case "Restaurantsbars":
-        getLocationData().then(locationResponse => {
+        Promise.all([getWeatherData(), getLocationData()]).then(response => {
+          // Weather Response
+          console.log(response);
+          const kelvinToFahrenheit = kelvinTemp =>
+            Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+          const weatherResponse = response[0];
+          const locationResponse = response[1];
+          store.Header.weather = {};
+          store.Header.weather.city = weatherResponse.data.name;
+          store.Header.weather.temp = kelvinToFahrenheit(
+            weatherResponse.data.main.temp
+          );
+          store.Header.weather.feelsLike = kelvinToFahrenheit(
+            weatherResponse.data.main.feels_like
+          );
+          store.Header.weather.description =
+            weatherResponse.data.weather[0].main;
+
+          console.log(weatherResponse.data);
+
+          // Location Response
           store.Restaurantsbars.locations = locationResponse.data.filter(
             location => location.type === "Restaurants/Bars"
           );
